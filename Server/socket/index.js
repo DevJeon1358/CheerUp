@@ -1,4 +1,4 @@
-const sqlInfo = require('../private/sqlInfo.json')
+const sqlInfo = require('../private/sqlinfo.json')
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password, {
   host: sqlInfo.host,
