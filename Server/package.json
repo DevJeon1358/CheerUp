@@ -1,0 +1,26 @@
+{
+  "name": "cheer-up",
+  "version": "1.0.0",
+  "description": "대소고 해커톤",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevJeon1358/2018-2ND-DGSW-Hackaton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevJeon1358/2018-2ND-DGSW-Hackaton/issues"
+  },
+  "homepage": "https://github.com/DevJeon1358/2018-2ND-DGSW-Hackaton#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1",
+    "socket.io": "^2.1.1"
+  }
+}

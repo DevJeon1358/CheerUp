@@ -65,6 +65,20 @@ namespace CheerUp.Model
             }
         }
 
+        private string isBan;
+        public string IsBan
+        {
+            get
+            {
+                return isBan;
+            }
+            set
+            {
+                isBan = value;
+                NotifyPropertyChanged(nameof(IsBan));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)
         {

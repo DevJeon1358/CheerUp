@@ -1,4 +1,4 @@
-# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+﻿# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
 # Created by https://www.gitignore.io/api/visualstudiocode,windows,node,python
 # Edit at https://www.gitignore.io/?templates=visualstudiocode,windows,node,python
@@ -249,9 +249,37 @@ $RECYCLE.BIN/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+private
 Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/LoginWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/LoginWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/MainWindow.g.cs
 Windows Client/CheerUp/obj/Debug/View/MainWindow - 복사본.g.i.cs
+test.html
+Windows Client/.vs/CheerUp/v15/.suo
+Windows Client/.vs/CheerUp/v15/.suo
+Windows Client/.vs/CheerUp/v15/.suo
+Windows Client/.vs/CheerUp/v15/Server/sqlite3/storage.ide
+Windows Client/.vs/CheerUp/v15/Server/sqlite3/storage.ide-shm
+Windows Client/.vs/CheerUp/v15/Server/sqlite3/storage.ide-wal
+Windows Client/CheerUp/obj/Debug/App.g.i.cs
+Windows Client/CheerUp/obj/Debug/CheerUp.csproj.CoreCompileInputs.cache
+*.cache
+*.lref
+*.baml
+Windows Client/CheerUp/obj/Debug/App.g.cs
+Windows Client/CheerUp/obj/Debug/App.g.i.cs
+*.lref
+Windows Client/CheerUp/obj/Debug/View/AccountBanWindow.baml
+Windows Client/CheerUp/obj/Debug/View/AccountBanWindow.g.cs
+Windows Client/CheerUp/obj/Debug/View/AccountBanWindow.g.i.cs
+Windows Client/CheerUp/obj/Debug/View/AutoLoginWindow.baml
+Windows Client/CheerUp/obj/Debug/View/AutoLoginWindow.g.cs
+Windows Client/CheerUp/obj/Debug/View/AutoLoginWindow.g.i.cs
+*.baml
+Windows Client/CheerUp/obj/Debug/View/LoadingWindow.g.cs
+Windows Client/CheerUp/obj/Debug/View/LoadingWindow.g.i.cs
+Windows Client/CheerUp/obj/Debug/View/LoginWindow.g.cs
+Windows Client/CheerUp/obj/Debug/View/MainWindow.baml
+Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
