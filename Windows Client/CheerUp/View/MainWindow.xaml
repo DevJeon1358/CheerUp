@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Initialized="Window_Initialized" Closing="Window_Closing">
     <Window.Resources>
+        <Style x:Key="GridViewStyle_1" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                        <Border BorderThickness="0,0,0,0" BorderBrush="Transparent" Background="Transparent">
+                            <TextBlock x:Name="ContentHeader" Text="{TemplateBinding Content}" Padding="5,5,5,0" Width="{TemplateBinding Width}" TextAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="NanumGothic" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
         <DataTemplate x:Key="CheerListDatatemplate">
             <Grid>
                 <Grid.RowDefinitions>
@@ -31,13 +46,13 @@
                 <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
                     <TextBox x:Name="send_textbox" HorizontalAlignment="Left" Height="21" Margin="5,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Foreground="#FFEEEEEE" Background="#FF424242" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontFamily="NanumGothic"/>
                     <Button x:Name="button" Content="전송" HorizontalAlignment="Left" Margin="298,419,0,0" VerticalAlignment="Top" Width="42" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" FontFamily="NanumGothic"/>
-                    <ListView x:Name="CheerlistView" Margin="10,77,0,0" 
+                    <ListView x:Name="CheerlistView" Margin="10,69,0,0" 
                               HorizontalAlignment="Left" VerticalAlignment="Top" 
                               Width="330" Height="330" BorderBrush="{x:Null}" 
                               Background="#FF212121" Foreground="#FF424242"
                               ItemTemplate="{StaticResource CheerListDatatemplate}">
                         <ListView.View>
-                            <GridView>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource GridViewStyle_1}">
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>

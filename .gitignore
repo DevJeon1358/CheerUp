@@ -304,3 +304,5 @@ Windows Client/packages/System.Collections.Immutable.1.5.0/useSharedDesignerCont
 Windows Client/packages/System.Collections.Immutable.1.5.0/version.txt
 Windows Client/CheerUp/bin/Debug/CheerUp.exe
 Windows Client/CheerUp/bin/Debug/CheerUp.exe
+Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
+*.cache
