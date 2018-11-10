@@ -6,13 +6,36 @@
         xmlns:local="clr-namespace:CheerUp"
         mc:Ignorable="d"
         Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Initialized="Window_Initialized" Closing="Window_Closing">
+    <Window.Resources>
+        <DataTemplate x:Key="CheerListDatatemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="0.2*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <TextBlock x:Name="tbMessage" Text="{Binding Content}"
+                               VerticalAlignment="Center" Foreground="White" 
+                               FontSize="18" FontFamily="NanumGothic" FontWeight="Bold"/>
+                </Grid>
+                
+                <Grid Grid.Row="1">
+                    
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
                 <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
                     <TextBox x:Name="send_textbox" HorizontalAlignment="Left" Height="21" Margin="5,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Foreground="#FFEEEEEE" Background="#FF424242" BorderBrush="{x:Null}" VerticalContentAlignment="Center" FontFamily="NanumGothic"/>
                     <Button x:Name="button" Content="전송" HorizontalAlignment="Left" Margin="298,419,0,0" VerticalAlignment="Top" Width="42" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" FontFamily="NanumGothic"/>
-                    <ListView x:Name="listView" HorizontalAlignment="Left" Height="330" Margin="10,77,0,0" VerticalAlignment="Top" Width="330" Background="#FF212121" BorderBrush="{x:Null}" Foreground="#FF424242">
+                    <ListView x:Name="CheerlistView" Margin="10,77,0,0" 
+                              HorizontalAlignment="Left" VerticalAlignment="Top" 
+                              Width="330" Height="330" BorderBrush="{x:Null}" 
+                              Background="#FF212121" Foreground="#FF424242"
+                              ItemTemplate="{StaticResource CheerListDatatemplate}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn/>
@@ -35,9 +58,11 @@
                     </Image.RenderTransform>
                 </Image>
                 <Image x:Name="next_btn" HorizontalAlignment="Left" Height="25" Margin="310,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand"/>
-                <Label x:Name="cheercount_label" Content="누적 응원 : 097 건" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumGothic"/>
-                <Label x:Name="place_label" Content="강당" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
-                <Image x:Name="logoout_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/logout.png" Cursor="Hand" MouseLeftButtonDown="logoout_btn_MouseLeftButtonDown"/>
+                <Grid x:Name="gdCurPlace">
+                    <Label x:Name="cheercount_label" Content="누적 응원 : 097 건" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumGothic"/>
+                    <Label x:Name="place_label" Content="{Binding Name}" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
+                </Grid>
+                <Image x:Name="logoout_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/logout.png" Cursor="Hand"/>
                 <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="285,122,0,0" VerticalAlignment="Top" Width="50" Source="../Image/refresh.png" Cursor="Hand"/>
 
             </Grid>

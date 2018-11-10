@@ -8,14 +8,6 @@ namespace CheerUp.Network
 {
     public partial class SocketManager
     {
-        public void GetPlaceList()
-        {
-            Emit("getplace");
-        }
 
-        public void SendCurPlace()
-        {
-            Emit("screenMode");
-        }
     }
 }

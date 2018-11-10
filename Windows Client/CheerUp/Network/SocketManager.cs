@@ -40,7 +40,6 @@ namespace CheerUp.Network
                     if (OnDataGetEnded != null)
                     {
                         OnDataGetEnded(this, data);
-                        socket.Close();
                     }
                 }
             });
