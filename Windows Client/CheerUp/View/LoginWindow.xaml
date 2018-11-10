@@ -10,38 +10,21 @@
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
                 <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
-                    <TextBox x:Name="send_textbox" HorizontalAlignment="Left" Height="21" Margin="5,418,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="288" Foreground="#FFEEEEEE" Background="#FF424242" BorderBrush="{x:Null}" VerticalContentAlignment="Center"/>
-                    <Button x:Name="button" Content="전송" HorizontalAlignment="Left" Margin="298,419,0,0" VerticalAlignment="Top" Width="42" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}"/>
-                    <ListView x:Name="listView" HorizontalAlignment="Left" Height="330" Margin="10,77,0,0" VerticalAlignment="Top" Width="330" Background="#FF212121" BorderBrush="{x:Null}" Foreground="#FF424242">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn/>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="26,191,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
+                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="28" Margin="26,241,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
                 </Grid>
-                <Label x:Name="connetion_info_label" Content="연결됨" HorizontalAlignment="Center" Margin="156,582,156,-4" VerticalAlignment="Top" FontFamily="NanumGothic" Foreground="White" FontSize="10" HorizontalContentAlignment="Center"/>
                 <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>
                 <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png"/>
-                <Image x:Name="filter_btn" HorizontalAlignment="Left" Height="25" Margin="310,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/filter.png"/>
-                <Label x:Name="header_label" Content="응원하기" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
-                <Image x:Name="back_btn" HorizontalAlignment="Left" Height="25" Margin="15,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5">
-                    <Image.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-180"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Image.RenderTransform>
-                </Image>
-                <Image x:Name="next_btn" HorizontalAlignment="Left" Height="25" Margin="310,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5"/>
-                <Label x:Name="cheercount_label" Content="누적 응원 : 097 건" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumGothic"/>
-                <Label x:Name="place_label" Content="강당" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
-                <Image x:Name="account_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/account.png"/>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="285,122,0,0" VerticalAlignment="Top" Width="50" Source="../Image/refresh.png"/>
+                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
+                <Image x:Name="account_btn" HorizontalAlignment="Left" Height="41" Margin="15,90,0,0" VerticalAlignment="Top" Width="41" Source="/CheerUp;component/Image/account.png"/>
+                <Label x:Name="header_label_Copy" Content="로그인이 필요합니다!" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="header_label_Copy1" Content="계정이 없으신가요?" HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="header_label_Copy2" Content="회원가입" HorizontalAlignment="Left" Margin="173,116,0,0" VerticalAlignment="Top" Foreground="#FF1A237E" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="header_label_Copy3" Content="LOGIN" HorizontalAlignment="Left" Margin="20,281,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold" FontSize="18"/>
+                <Label x:Name="header_label_Copy4" Content="로그인" HorizontalAlignment="Left" Margin="79,281,0,0" VerticalAlignment="Top" Foreground="#FF919191" FontFamily="NanumSquareRound Bold" FontSize="18"/>
 
             </Grid>
         </Border>
+        <Button x:Name="button" Content="로그인" HorizontalAlignment="Left" Margin="27,434,0,0" VerticalAlignment="Top" Width="299" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" Height="30" FontFamily="NanumGothic"/>
     </Grid>
 </Window>
