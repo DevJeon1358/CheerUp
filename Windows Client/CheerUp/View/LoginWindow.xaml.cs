@@ -86,6 +86,8 @@ namespace CheerUp
                  if (isRight)
                  {
                     App.Current.Dispatcher.Invoke(() => { // 크로스 스레드를 해결하기 위한 방법
+                        
+
                         MainWindow mWindow = new MainWindow();
                         mWindow.Show();
                         this.Close();
@@ -120,6 +122,11 @@ namespace CheerUp
             //    }
             //    isend = true;
             //});
+        }
+
+        private void getPlace()
+        {
+            App.socketManager.GetPlaceList();
         }
 
         private void password_textbox_PasswordChanged(object sender, RoutedEventArgs e)
