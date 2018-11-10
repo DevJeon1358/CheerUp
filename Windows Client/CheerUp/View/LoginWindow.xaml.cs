@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQ_CRE;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -21,6 +22,10 @@ namespace CheerUp
     /// </summary>
     public partial class LoginWindow : Window
     {
+        //회원가입 주소
+        private string RegisterUrl = "http://weburl.com";
+
+
         public LoginWindow()
         {
             InitializeComponent();
@@ -30,8 +35,35 @@ namespace CheerUp
         {
             try
             {
-                //WEB URL
-                Process.Start("http://WEBURL");
+                //회원가입 URL 뛰우기
+                Process.Start(RegisterUrl);
+            }
+            catch (Exception)
+            {
+                //브라우저 문제
+                MessageBox.Show("회원가입 창을 뛰우는데 실패했습니다.\n" + RegisterUrl + "주소로 접속을 시도해보십시오.");
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            //로그인 성공 직후 수행
+            this.Close();
+
+            //자동 로그인 정보 등록
+            if (AutoLogin_Checkbox.IsChecked == true)
+            {
+                RegisteryMgr rMgr = new RegisteryMgr();
+                rMgr.setUserRegisteryValue("CheerUp", "AutoLogin", "true");
+                rMgr.setUserRegisteryValue("CheerUp", "LID", id_textbox.Text);
+                rMgr.setUserRegisteryValue("CheerUp", "LALP", id_textbox.Text);
+            }
+
+            //로그인 수행 후 최종 폼 보이기
+            MainWindow mWindow = new MainWindow();
+            try
+            {
+                mWindow.Show();
             }
             catch (Exception)
             {}

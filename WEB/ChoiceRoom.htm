@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cheer Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
+        <style>
+           
+            #bg{ /* 백그라운드  */
+                width: 100%;
+                height: 100vh;
+                background-color: #292c35;
+            }
+
+            #content{ /* 내용 */
+                padding: 0px;
+                width: 60%;
+                height: 60vh;
+                background-color: #3a4151;
+                border-radius: 20px;
+                box-shadow: 0px 0px 100px black;
+                overflow: hidden;
+            }
+            
+            #content_top{ /* 내용 위에 색깔 입히기 */
+                width: 120%;
+                height: 50%;
+                background-color: #5bdaa5;
+                box-shadow: 0px 0px 30px black;
+                transform: rotate(-2deg) translateX(-10%) translateY(-50%);
+                display: inline-block;
+                position: absolute;
+                left:0;
+                right:0;
+            }
+
+            .title{ /* 제목 */
+                padding-top: 10px;
+                padding-left: 30px;
+                margin-bottom: 0px;
+                font-size: 35px;
+                color: white;
+                position: relative;
+                z-index: 5;
+                transform: scale(1.2);
+            }
+
+            .title_sub{ /* 소제목 */
+                padding-left: 30px;
+                margin-top: 10px;
+                font-size: 15px;
+                color: white;
+                position: relative;
+                z-index: 5;
+            }
+
+            .main{
+                margin-top: 8%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="bg" class="uk-inline">
+        
+            <div id="content" class="uk-position-center uk-overlay uk-overlay-default">
+                
+                <!-- 색깔 -->
+                <div id="content_top"></div>
+                
+                <img class="title" src="img/logo.png">
+                <p class="title_sub">방을 정해주세요.</p>
+
+                <div class="main uk-child-width-1-5@m uk-grid-small uk-grid-match" uk-grid>
+                    <a href="./PostMessage.htm?seat_number=1">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">1</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm?seat_number=2">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">2</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm?seat_number=3">
+                        <div class="uk-card uk-card-secondary uk-card-body">
+                            <h3 class="uk-card-title">3</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm?seat_number=4">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">4</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm?seat_number=5">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">5</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <script src="uikit/js/uikit.min.js" ></script>
+        <script src="uikit/js/uikit-icons.min.js" ></script>
+    </body>
+</html>

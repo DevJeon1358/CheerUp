@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
         <style>
-            
+           
             #bg{ /* 백그라운드  */
                 width: 100%;
                 height: 100vh;
@@ -23,16 +23,43 @@
                 overflow: hidden;
             }
             
-            #content-top{ /* 내용에 색깔 입히기 */
+            #content_top{ /* 내용 위쪽에 색깔 입히기 */
                 width: 120%;
                 height: 50%;
                 background-color: #5bdaa5;
                 box-shadow: 0px 0px 30px black;
+<<<<<<< HEAD
                 transform: rotate(2.5deg) translateX(-10%) translateY(-50px);
                 display:inline-block;
                 position: fixed;
+=======
+                transform: rotate(-2deg) translateX(-10%) translateY(-50%);
+                display: inline-block;
+                position: absolute;
+>>>>>>> 995c09cbebddf3fe2e35508594a70111d0a0f5df
                 left:0;
                 right:0;
+            }
+
+            .title{ /* 제목 */
+                padding-top: 10px;
+                padding-left: 30px;
+                margin-bottom: 0px;
+                font-size: 35px;
+                color: white;
+                position: relative;
+                z-index: 5;
+                transform: scale(1.2);
+            }
+
+            .title_sub{ /* 소제목 */
+                padding-left: 30px;
+                padding-bottom: 20px;
+                margin-top: 10px;
+                font-size: 15px;
+                color: white;
+                position: relative;
+                z-index: 5;
             }
 
         </style>
@@ -41,8 +68,16 @@
         <div id="bg" class="uk-inline">
         
             <div id="content" class="uk-position-center uk-overlay uk-overlay-default">
+                
                 <!-- 색깔 -->
-                <div id="content-top"></div>
+                <div id="content_top"></div>
+                
+                <img class="title" src="img/logo.png">
+                <p class="title_sub">응원메세지를 남겨주세요!!</p>
+
+                <form>
+                   <img src="img/contentIcon.png">
+                </form>
 
             </div>
             

@@ -40,7 +40,7 @@ hr:before {
     height: 50%;
     background-color: #ffb337;
     box-shadow: 0px 0px 30px black;
-    transform: rotate(2.5deg) translateX(-10%) translateY(-150px);
+    transform: rotate(2.5deg) translateX(-10%) translateY(-195px);
     display:inline-block;
     position: fixed;
     z-index: 2;

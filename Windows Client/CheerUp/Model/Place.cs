@@ -33,21 +33,21 @@ namespace CheerUp.Model
             set
             {
                 name = value;
-                NotifyPropertyChanged(nameof(name));
+                NotifyPropertyChanged(nameof(Name));
             }
         }
 
-        private string explain;
-        public string Explain
+        private string explaination;
+        public string Explaination
         {
             get
             {
-                return explain;
+                return explaination;
             }
             set
             {
-                explain = value;
-                NotifyPropertyChanged(nameof(explain));
+                explaination = value;
+                NotifyPropertyChanged(nameof(Explaination));
             }
         }
 

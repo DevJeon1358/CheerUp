@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
         <link rel="stylesheet" href="Login_Reg_Style.css">
+        <script src="RegistCheck.js"></script>
+
     </head>
     <body class="uk-background-${0|default,muted,primary,secondary|}" >
         <div id="content-top">
@@ -18,17 +20,17 @@
             <div class="uk-legend" style="color: black; font-size: 40px; margin-left:95px; margin-top: 0px; color: whitesmoke">Join us</div>
             <hr size="5">
             <div style="margin-left: 50px"> 
-            <form method="POST">
+            <form method="POST" onsubmit="return validate();">
                 <div class="uk-margin">
-                        <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="이름" name="name">
+                        <input class="uk-input uk-form-success uk-form-width-medium" type="text" placeholder="이름" name="name" maxlength="25" id="name">
                 </div>
 
                  <div class="uk-margin">
-                     <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="아이디" name="id">
+                     <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="아이디" name="id" maxlength="12" id="id">
                  </div>
                 
                 <div class="uk-margin">
-                     <input class="uk-input uk-form-success uk-form-width-medium" type="password" placeholder="패스워드" name="password">
+                     <input class="uk-input uk-form-danger uk-form-width-medium" type="password" placeholder="패스워드" name="password"maxlength="12" id="password">
                  </div>
                     
             </div>
@@ -45,5 +47,6 @@
                 
         <script src="uikit/js/uikit.min.js" ></script>
         <script src="uikit/js/uikit-icons.min.js" ></script>
+       
     </body>
 </html>

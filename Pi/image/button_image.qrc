@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="button_updown">
+    <file>triangle_down.png</file>
+    <file>triangle_up.png</file>
+  </qresource>
+</RCC>
