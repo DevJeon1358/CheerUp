@@ -2,7 +2,8 @@ const sqlInfo = require('../private/sqlinfo.json')
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password, {
   host: sqlInfo.host,
-  dialect: "mysql"
+  dialect: "mysql",
+  timezone: '+09:00'
 })
 /*
 +----------+---------+------+-----+---------+----------------+
@@ -62,7 +63,7 @@ const Message = sequelize.define('Message', {
 function Route(client) {
   console.log('Connect', client.id)
   client.on('screenMode', function (data) {
-    client.join('screen')
+    client.join('screen' + data)
     Message.findAll({
       where: {
         Place: data
@@ -91,6 +92,7 @@ function Route(client) {
       if (res)
       {
         client.isAuthed = true
+        client.userId = res.Idx
         return client.emit('login_res', true)
       }
       client.emit('login_res', false)
@@ -114,6 +116,52 @@ function Route(client) {
       client.emit('join_res', false)
     })
   })
+  client.on('count', function () {
+    User.count()
+    .then(value => {
+      client.emit('count_res', value)
+    })
+  })
+  client.on('addplace', function (data) {
+    if (!(data && data.Name && data.Explaination))
+      return client.emit('addplace_res', false)
+    Place.create({
+      Name: data.Name,
+      Explaination: data.Explaination
+    })
+    .then(res => {
+      return client.emit('addplace_res', true)
+    })
+    .catch(err => {
+      return client.emit('addplace_res', false)
+    })
+  })
+  client.on('getplace', function () {
+    Place.findAll()
+    .then(res => {
+      client.emit('getplace_res', res)
+    })
+  })
+  client.on('addmessage', function (data) {
+    if (!client.userId)
+      client.emit('addmessage_res', false)
+    if (!(data && data.Content && data.Place))
+      client.emit('addmessage_res', false)
+    Message.create({
+      Content: data.Content,
+      User: client.userId,
+      Place: data.Place
+    })
+    .then(res => {
+      console.log(res)
+      client.emit('addmessage_res', true)
+      client.to('screen' + data.Place).emit('change', res.dataValues)
+    })
+    .catch(err => {
+      client.emit('addmessage_res', false)
+    })
+  })
+  
 }
 
 
