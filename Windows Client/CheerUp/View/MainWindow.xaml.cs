@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using SQ_CRE;
 using System.Diagnostics;
 using CheerUp.Model;
+using System.ComponentModel;
 
 namespace CheerUp
 {
@@ -23,6 +24,8 @@ namespace CheerUp
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.Windows.Forms.Timer serverConnectCheck = new System.Windows.Forms.Timer();
+        BackgroundWorker serverChecker = new BackgroundWorker();
         private bool isLogout = false;
         private Place curPlace = new Place();
 
@@ -30,6 +33,43 @@ namespace CheerUp
         {
             InitPlace();
             InitializeComponent();
+        }
+
+        private void ServerChecker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                NetworkMgr nMgr = new NetworkMgr();
+                if (nMgr.IsServerConnectionUseable("35.220.152.156"))
+                {
+                    App.Current.Dispatcher.Invoke(() =>
+                    {
+                        root_border.Background = new SolidColorBrush(Color.FromRgb(103, 58, 183));
+                        connetion_info_label.Content = "연결됨";
+                    });
+                }
+                else
+                {
+                    App.Current.Dispatcher.Invoke(() =>
+                    {
+                        root_border.Background = new SolidColorBrush(Color.FromRgb(230, 52, 52));
+                        connetion_info_label.Content = "접속 불가";
+                    });
+                }
+            }
+            catch (Exception)
+            { }
+        }
+
+
+
+        private void ServerConnectCheck_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                serverChecker.RunWorkerAsync();
+            }
+            catch (Exception) { }
         }
 
         private void InitPlace()
@@ -89,7 +129,6 @@ namespace CheerUp
                 Process.GetCurrentProcess().Kill();
             }
 
-
             // SOME STUFF HERE
         }
 
@@ -107,6 +146,16 @@ namespace CheerUp
 
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //서버 연결 상태 확인
+            serverChecker.DoWork += ServerChecker_DoWork;
+            serverChecker.WorkerSupportsCancellation = true;
+            serverConnectCheck.Interval = 3000;
+            serverConnectCheck.Tick += ServerConnectCheck_Tick;
+            serverConnectCheck.Start();
         }
     }
 }
