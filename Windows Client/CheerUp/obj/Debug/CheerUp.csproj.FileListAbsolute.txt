@@ -34,3 +34,6 @@ C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\De
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.g.cs
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AccountBanWindow.baml
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.baml
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\SQ_CRE.dll
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.g.cs
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.baml

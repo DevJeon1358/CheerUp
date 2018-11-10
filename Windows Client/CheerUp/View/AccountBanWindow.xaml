@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheerUp"
         mc:Ignorable="d"
-        Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+        Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Closing="Window_Closing">
     <Grid>
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
@@ -13,13 +13,13 @@
                     <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="145,182,0,0" VerticalAlignment="Top" Width="60" Source="../Image/ban.png"/>
                 </Grid>
                 <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>
-                <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png"/>
-                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
+                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
                 <Image x:Name="account_btn" HorizontalAlignment="Left" Height="41" Margin="15,90,0,0" VerticalAlignment="Top" Width="41" Source="/CheerUp;component/Image/account.png"/>
                 <Label x:Name="header_label_Copy" Content="계정 제한됨" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
                 <Label x:Name="des_information_label" Content="계정이 제한되었습니다. 관리자에게 문의하세요." HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold"/>
                 <Label x:Name="main_information_label" Content="접근 거부" HorizontalAlignment="Left" Margin="135,393,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
             </Grid>
         </Border>
+        <Button x:Name="button" Content="종료" HorizontalAlignment="Left" Margin="27,484,0,0" VerticalAlignment="Top" Width="299" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" Height="30" FontFamily="NanumGothic" Cursor="Hand" Click="button_Click_1"/>
     </Grid>
 </Window>

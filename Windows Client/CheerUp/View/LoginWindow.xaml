@@ -10,22 +10,23 @@
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
                 <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="26,191,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
-                    <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="28" Margin="26,241,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
-                    <CheckBox x:Name="AutoLogin_Checkbox" Content="자동 로그인" HorizontalAlignment="Left" Margin="26,342,0,0" VerticalAlignment="Top" FontFamily="NanumGothic" BorderBrush="#FF646464" Foreground="White" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="id_textbox" HorizontalAlignment="Left" Height="28" Margin="26,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
+                    <PasswordBox x:Name="password_textbox" HorizontalAlignment="Left" Height="28" Margin="26,291,0,0" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
+                    <CheckBox x:Name="AutoLogin_Checkbox" Content="자동 로그인" HorizontalAlignment="Left" Margin="26,392,0,0" VerticalAlignment="Top" FontFamily="NanumGothic" BorderBrush="#FF646464" Foreground="White" VerticalContentAlignment="Center"/>
                 </Grid>
                 <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>
-                <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png"/>
-                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
+                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
                 <Image x:Name="account_btn" HorizontalAlignment="Left" Height="41" Margin="15,90,0,0" VerticalAlignment="Top" Width="41" Source="/CheerUp;component/Image/account.png"/>
                 <Label x:Name="header_label_Copy" Content="로그인이 필요합니다!" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
                 <Label x:Name="header_label_Copy1" Content="계정이 없으신가요?" HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold"/>
                 <Label x:Name="header_label_Copy2" Content="회원가입" HorizontalAlignment="Left" Margin="173,116,0,0" VerticalAlignment="Top" Foreground="#FF1A237E" FontFamily="NanumSquareRound Bold" Cursor="Hand"/>
                 <Label x:Name="header_label_Copy3" Content="LOGIN" HorizontalAlignment="Left" Margin="20,281,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold" FontSize="18"/>
                 <Label x:Name="header_label_Copy4" Content="로그인" HorizontalAlignment="Left" Margin="79,281,0,0" VerticalAlignment="Top" Foreground="#FF919191" FontFamily="NanumSquareRound Bold" FontSize="18"/>
+                <Label x:Name="header_label_Copy5" Content="ID" HorizontalAlignment="Left" Margin="29,325,0,0" VerticalAlignment="Top" Foreground="#FF919191" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="header_label_Copy6" Content="PW" HorizontalAlignment="Left" Margin="29,395,0,0" VerticalAlignment="Top" Foreground="#FF919191" FontFamily="NanumSquareRound Bold"/>
 
             </Grid>
         </Border>
-        <Button x:Name="button" Content="로그인" HorizontalAlignment="Left" Margin="27,434,0,0" VerticalAlignment="Top" Width="299" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" Height="30" FontFamily="NanumGothic" Cursor="Hand"/>
+        <Button x:Name="button" Content="로그인" HorizontalAlignment="Left" Margin="27,484,0,0" VerticalAlignment="Top" Width="299" Background="#FF424242" Foreground="#FFEEEEEE" BorderBrush="{x:Null}" Height="30" FontFamily="NanumGothic" Cursor="Hand" Click="button_Click"/>
     </Grid>
 </Window>
