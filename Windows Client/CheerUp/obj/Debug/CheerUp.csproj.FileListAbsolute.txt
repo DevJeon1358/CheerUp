@@ -1,1 +1,16 @@
 c:\users\square\documents\visual studio 2015\Projects\CheerUp\CheerUp\bin\Debug\CheerUp.exe.config
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\CheerUp.exe.config
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\CheerUp.exe
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\CheerUp.pdb
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.csprojAssemblyReference.cache
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\MainWindow.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\App.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp_MarkupCompile.cache
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp_MarkupCompile.lref
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\MainWindow.baml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.g.resources
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.Properties.Resources.resources
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.csproj.GenerateResource.cache
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.csproj.CoreCompileInputs.cache
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.exe
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.pdb
