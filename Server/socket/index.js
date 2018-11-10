@@ -176,6 +176,7 @@ var server = net.createServer(function (client) {
     const command = data.split(' ')[0]
     if (command === 'init')
     {
+      console.log('tcp init')
       const place = data.split(' ')[1]
       currentClient = client
       Message.findAll({
@@ -184,12 +185,19 @@ var server = net.createServer(function (client) {
         }
       })
       .then(res => {
+        console.log('tcp', res)
         client.emit('data', Buffer.from(JSON.stringify(res)))
       })
       .catch(err => {
         console.log(err)
       })
     }
+  })
+  client.on('close', () => {
+    console.log('tcp client disconnect')
+  })
+  client.on('error', () => {
+    client.end()
   })
 })
 
