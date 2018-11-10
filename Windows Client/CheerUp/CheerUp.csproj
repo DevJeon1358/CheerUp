@@ -106,7 +106,6 @@
     <Compile Include="Model\Message.cs" />
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Network\Data\Places.cs" />
     <Compile Include="Network\LoginManager.cs" />
     <Compile Include="Network\PlaceManager.cs" />
     <Compile Include="Network\SocketManager.cs" />
@@ -159,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\" />
+    <Folder Include="Network\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Header.png" />

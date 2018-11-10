@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SQ_CRE;
 using System.Diagnostics;
+using CheerUp.Model;
 
 namespace CheerUp
 {
@@ -49,6 +50,7 @@ namespace CheerUp
                 MessageBox.Show("인터넷 연결을 확인하십시오.");
                 Process.GetCurrentProcess().Kill();
             }
+
 
             // SOME STUFF HERE
         }
