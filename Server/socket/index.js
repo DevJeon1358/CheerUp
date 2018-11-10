@@ -65,8 +65,10 @@ function Route(client) {
     })
   })
   client.on('login', function (data) {
+    console.log(data)
     if (!(data && data.Id && data.Password))
       return client.emit('login_res', false)
+    
     User.findOne({
       where: {
         Id: data.Id,
