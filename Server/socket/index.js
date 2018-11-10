@@ -1,4 +1,4 @@
-const sqlInfo = require('../private/sqlInfo.json')
+const sqlInfo = require('../private/sqlinfo.json')
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password, {
   host: sqlInfo.host,
@@ -64,8 +64,11 @@ function Route(client) {
       client.emit('init', false)
     })
   })
-
   client.on('login', function (data) {
+    console.log(data)
+    if (!(data && data.Id && data.Password))
+      return client.emit('login_res', false)
+    
     User.findOne({
       where: {
         Id: data.Id,
@@ -75,7 +78,7 @@ function Route(client) {
     .then(res => {
       if (res)
       {
-        client.isAuthed = true  
+        client.isAuthed = true
         return client.emit('login_res', true)
       }
       client.emit('login_res', false)
@@ -99,7 +102,6 @@ function Route(client) {
       client.emit('join_res', false)
     })
   })
-  
 }
 
 
