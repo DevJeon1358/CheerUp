@@ -24,6 +24,7 @@ function MainContent() {
             Content: textarea.val(),
             Place: roomNum
         })
+        textarea.val("");
     })
 
     main_div.append(form);
