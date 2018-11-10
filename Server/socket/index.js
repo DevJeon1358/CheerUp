@@ -168,7 +168,12 @@ function Route(client) {
       client.emit('addmessage_res', false)
     })
   })
-  
+  client.on('error', function (err) {
+    console.log('error', err)
+  })
+  client.on('disconnect', function () {
+    console.log('disconnect', client.id)
+  })
 }
 
 const net = require('net')
