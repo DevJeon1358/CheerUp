@@ -23,7 +23,7 @@
                 overflow: hidden;
             }
             
-            #content_top{ /* 내용 위쪽에 색깔 입히기 */
+            #content_top{ /* 내용 위에 색깔 입히기 */
                 width: 120%;
                 height: 50%;
                 background-color: #5bdaa5;
@@ -53,6 +53,10 @@
                 z-index: 5;
             }
 
+            .main{
+                margin-top: 8%;
+            }
+
         </style>
     </head>
     <body>
@@ -64,18 +68,41 @@
                 <div id="content_top"></div>
                 
                 <p class="title">CheerUp</p>
-                <p class="title_sub">응원메세지를 남겨주세요!!</p>
+                <p class="title_sub">방을 정해주세요.</p>
 
-                <form class="uk-position-center uk-overlay uk-overlay-default">
-                    <div class="uk-margin">
-                        <input class="uk-input uk-form-success uk-form-width-medium" type="text" placeholder="내용을 입력해주세요" value="">
-                    </div>
-                        
-                    <div class="uk-margin">
-                        <input class="uk-input uk-form-width-medium" type="text">
-                    </div>
-                </form>
-
+                <div class="main uk-child-width-1-5@m uk-grid-small uk-grid-match" uk-grid>
+                    <a href="./PostMessage.htm">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">교무실 1</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">교무실 2</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm">
+                        <div class="uk-card uk-card-secondary uk-card-body">
+                            <h3 class="uk-card-title">교무실 3</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm">
+                        <div class="uk-card uk-card-primary uk-card-body">
+                            <h3 class="uk-card-title">교무실 4</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                    <a href="./PostMessage.htm">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">교무실 5</h3>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                
             </div>
             
         </div>
