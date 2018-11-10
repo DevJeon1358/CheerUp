@@ -155,7 +155,7 @@ function Route(client) {
     .then(res => {
       console.log(res)
       client.emit('addmessage_res', true)
-      client.to('screen' + data.Place).emit(res.dataValues)
+      client.to('screen' + data.Place).emit('change', res.dataValues)
     })
     .catch(err => {
       client.emit('addmessage_res', false)
