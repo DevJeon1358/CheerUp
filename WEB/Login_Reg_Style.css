@@ -1,0 +1,65 @@
+html{
+    background-color:#292c35;
+    
+}
+
+.CenterContent{
+    
+    width:300px;
+    height:800px;
+   
+}
+
+hr { 
+ position:relative;
+ height:.20em; 
+ border:0;
+ overflow:hidden;
+}
+
+hr:before {
+ content:"";
+ display:block;
+ position:absolute;
+ top:0;
+ left:0;
+ height:.25em;
+ width:5em;
+ background:red;
+ box-shadow:
+  5em 0 0 0 orange,
+  10em 0 0 0 yellow,
+  15em 0 0 0 green,
+ 20em 0 0 0 blue,
+ 25em 0 0 0 indigo,
+  30em 0 0 0 violet;
+}
+
+#content-top{ /* 내용에 색깔 입히기 */
+    width: 120%;
+    height: 50%;
+    background-color: #ffb337;
+    box-shadow: 0px 0px 30px black;
+    transform: rotate(2.5deg) translateX(-10%) translateY(-150px);
+    display:inline-block;
+    position: fixed;
+    z-index: 2;
+    left:0;
+    right:0;
+
+}
+#content-top>ul{
+    display: inline-block;
+}
+
+#content{ /* 내용 */
+    padding: 0px;
+    width: 60%;
+    height: 60vh;
+    background-color: #3a4151;
+    border-radius: 20px;
+    box-shadow: 0px 0px 100px black;
+    overflow: hidden;
+    position: absolute;
+  
+}

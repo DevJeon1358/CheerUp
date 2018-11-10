@@ -1,30 +1,49 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
-        <link rel="stylesheet" href="Login_Style.css">
+        <link rel="stylesheet" href="Login_Reg_Style.css">
     </head>
     <body class="uk-background-${0|default,muted,primary,secondary|}" >
-        
-        <div class="uk-position-top-left"><img src="img/logo.png"></div>
+        <div id="content-top">
+            
+                <ul class="uk-breadcrumb uk-position-small uk-position-top-center" style="border-top: 150px">
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-disabled"><a>Disabled</a></li>
+                        <li><span>Active</span></li>
+                    </ul>
+        </div>
+       <div class="uk-position-top-left"><img src="img/logo.png" style="position: fixed; z-index:3;"></div>
 
-        <div class="uk-position-center">
-            <div class="uk-legend" style="color: black; font-size: 40px; margin-left:48px; margin-top: 0px; color: whitesmoke">Log in</div>
+        <div class="uk-position-center" style="width: 300px;">
+            
+            <div class="uk-legend" style="color: black; font-size: 40px; margin-left:95px; margin-top: 0px; color: whitesmoke;">Log in</div>
             <hr size="5">
-            <div class="uk-margin">
-                    <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="로그인">
-            </div>
-                
-            <div class="uk-margin">
-            <input class="uk-input uk-form-success uk-form-width-medium" type="password" placeholder="패스워드">
+            <div style="margin-left: 50px">
+            <form method="POST">
+                 <div class="uk-margin">
+                     <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="로그인" name="id">
+                 </div>
+                <div class="uk-margin">
+                     <input class="uk-input uk-form-success uk-form-width-medium" type="password" placeholder="패스워드" name="password">
+                </div>
+             </div>
+            <button type="submit" class="uk-button uk-button-primary uk-button-large uk-position-center" style="margin-top: 135px">Login</button> 
+            <a class="uk-link-text  uk-position-center" style="margin-top: 5000px" href="Register.htm">회원가입</a>
+        </form>
+        </div>
 
-           
-            <button class="uk-button uk-button-primary uk-button-large uk-position-center" style="margin-top: 135px">Login</button> 
-            
-            
+        <div class="uk-position-bottom-left">
+            <article class="uk-article">
+                <h1 class="uk-article-title" style="color: white">What is <a class="uk-link-reset" href="" style="color: yellow">Cheer up</a>?</h1>
+                <p class="uk-text-lead" style="color: white">아 진짜 이런거 1세기당 
+                나올까 말까 한건데 지금... <br>응원도하고! 인싸도 되고!</p>
+                
+            </article>
         </div>
         
         
