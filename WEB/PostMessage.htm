@@ -16,6 +16,8 @@
 
     <script>
         var socket = io.connect('35.220.152.156')
+        var request = new Request();
+        request.getParameter("seat");
         socket.emit('screenMode', 1)
         socket.on('init', (data)=> {
             for(d of data)
@@ -24,7 +26,6 @@
         socket.on('change', (data) => {
             AddContent(d.Content)
         })
-
         $(function(){
             MainContent()
         })
