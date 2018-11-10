@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\
 CheerUp
 none
 false
 DEBUG;TRACE
-C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\App.xaml
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\App.xaml
 5785930056
 
-16-1531585170
-17-1152865190
+12-1167361093
+171870289352
 View\AccountBanWindow.xaml;View\AutoLoginWindow.xaml;View\LoadingWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
 
-True
+False
 

@@ -47,6 +47,9 @@ namespace CheerUp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            //로그인 성공 직후 수행
+            this.Close();
+
             //자동 로그인 정보 등록
             if (AutoLogin_Checkbox.IsChecked == true)
             {
@@ -58,9 +61,12 @@ namespace CheerUp
 
             //로그인 수행 후 최종 폼 보이기
             MainWindow mWindow = new MainWindow();
-            mWindow.Show();
-
-            this.Close();
+            try
+            {
+                mWindow.Show();
+            }
+            catch (Exception)
+            {}
         }
     }
 }
