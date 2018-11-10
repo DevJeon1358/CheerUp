@@ -11,55 +11,40 @@
     <link rel="stylesheet" href="uikit/css/uikit.min.css" />
     <link rel="stylesheet" href="ContentStyle.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="PostMessage.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 
     <script>
         var socket = io.connect('35.220.152.156')
-        console.log(socket)
+        socket.emit('screenMode', 1)
+        socket.on('init', (data)=> {
+            for(d of data)
+            AddContent(d.Content)
+        })
+        socket.on('change', (data) => {
+            AddContent(d.Content)
+        })
+
+        $(function(){
+            MainContent()
+        })
     </script>
 </head>
 
 <body>
         <div id="bg" class="uk-inline">
+                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow>
 
+                        <ul class="uk-slideshow-items">
+                            
+                        </ul>
+                    
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                    
+                    </div>
         </div>
-    <script type="text/javascript">
-        function AddContent(message) {
-            var content = $('<div id="content" class="uk-position-center uk-overlay uk-overlay-default"></div>');
-            var content_top = $('<div id="content_top"></div>');
-            var top_div = $(`
-                                    <div class="top_div">
-                                            <img class="title" src="img/logo.png">
-                                            <p class="title_sub">응원메세지를 남겨주세요!!</p>
-                                        </div>`);
-            var main_div = $('<div class="main_div"></div>');
-            var form = $(`<form/>`);
-            var h1 = $(`<h1 class="main_div_title uk-heading-line uk-text-center"><span>응원 메세지</span></h1>`);
-            var textarea = $(`<textarea class="cheerup_textarea">{{message}}</textarea>`);
-            var input = $('<input class="submit_btn uk-button uk-button-small uk-button-secondary uk-position-bottom-right uk-position-large" type="submit" value="제출">');
-
-            form.append(h1);
-            form.append(textarea);
-            form.append(input);
-
-            main_div.append(form);
-
-            content.append(content_top);
-            content.append(top_div);
-            content.append(main_div);
-
-            $('#bg').append(content);
-        }
-        AddContent('민바규보');
-        var app = new Vue({
-            el: '.cheerup_textarea',
-            data: {
-                message: 'sdklfj Vue!'
-            }
-        });
-    </script>
-
-
+    
 
     <script src="uikit/js/uikit.min.js"></script>
     <script src="uikit/js/uikit-icons.min.js"></script>
