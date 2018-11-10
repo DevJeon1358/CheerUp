@@ -1,5 +1,5 @@
 
-function MainContent(roomNum) {
+function MainContent() {
     var li = $('<li/>');
     var content = $('<div id="content" class="uk-position-center uk-overlay uk-overlay-default"></div>');
     var content_top = $('<div id="content_top"></div>');
@@ -21,7 +21,7 @@ function MainContent(roomNum) {
     form.on("submit",function(e){
         e.preventDefault()
         socket.emit('addmessage', {
-            Content: $('.cheerup_textarea').html(),
+            Content: textarea.val(),
             Place: roomNum
         })
     })
@@ -76,8 +76,6 @@ function Request() {
                 break;
             }
         }
-        console.log(param)
-        console.log(requestParam)
         return requestParam;
     }
 }
