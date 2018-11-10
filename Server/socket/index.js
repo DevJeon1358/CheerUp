@@ -168,7 +168,12 @@ function Route(client) {
       client.emit('addmessage_res', false)
     })
   })
-  
+  client.on('error', function (err) {
+    console.log('error', err)
+  })
+  client.on('disconnect', function () {
+    console.log('disconnect', client.id)
+  })
 }
 
 const net = require('net')
@@ -191,7 +196,7 @@ var server = net.createServer(function (client) {
       })
       .then(res => {
         console.log('tcp', res)
-        client.write(Buffer.from(JSON.stringify(res)))
+        client.write(Buffer.from(JSON.stringify(res.slice(0, 10))))
       })
       .catch(err => {
         console.log(err)
