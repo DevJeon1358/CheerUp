@@ -107,7 +107,19 @@
     <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Header.png" />
+    <Resource Include="Image\Header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
