@@ -64,8 +64,9 @@ function Route(client) {
       client.emit('init', false)
     })
   })
-
   client.on('login', function (data) {
+    if (!(data && data.Id && data.Password))
+      return client.emit('login_res', false)
     User.findOne({
       where: {
         Id: data.Id,
@@ -75,7 +76,7 @@ function Route(client) {
     .then(res => {
       if (res)
       {
-        client.isAuthed = true  
+        client.isAuthed = true
         return client.emit('login_res', true)
       }
       client.emit('login_res', false)
@@ -98,9 +99,6 @@ function Route(client) {
       console.log(error)
       client.emit('join_res', false)
     })
-  })
-  client.on('ping', function () {
-    client.emit('pong')
   })
 }
 
