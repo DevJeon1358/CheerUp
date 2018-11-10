@@ -7,9 +7,9 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(("35.220.152.156", 3030))
 
 client_socket.send("init 1".encode())
-messages = client_socket.recv(5000).decode()
+messages = client_socket.recv(400).decode()
 # print(data)
-messages = json.loads(messages)
+messages = json.loads(messages.decode())
 print(len(messages))
 cnt = len(messages)-1
 def receives():
