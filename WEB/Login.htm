@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
         <link rel="stylesheet" href="Login_Reg_Style.css">
     </head>
     <body class="uk-background-${0|default,muted,primary,secondary|}" >
@@ -21,19 +22,17 @@
             <div class="uk-legend" style="color: black; font-size: 40px; margin-left:95px; color: whitesmoke;">Log in</div>
             <hr size="5">
             <div style="margin-left: 50px">
-            <form method="POST">
                  <div class="uk-margin">
-                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="text" placeholder="아이디" name="id">
+                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="text" placeholder="아이디" id="id">
                      
                  </div>
                 <div class="uk-margin">
-                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="password" placeholder="패스워드" name="password">
+                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="password" placeholder="패스워드" id="password">
                 </div>
              </div>
-            <button type="submit" class="uk-button uk-button-primary uk-button-default uk-position-center" style="margin-top: 135px;">Login</button> 
+            <button class="uk-button uk-button-primary uk-button-default uk-position-center" style="margin-top: 135px;" onclick="loginFunc()">Login</button> 
             <a class="uk-link-text  uk-position-center" style="margin-top: 180px;" href="Register.htm">회원가입</a> 
             
-        </form>
         </div>
 
 
@@ -72,7 +71,8 @@
             </article>
         
         <script>
-            
+            var socket = io.connect('35.220.152.156')
+            console.log(socket)
             var login = document.getElementById('login');
             var intro = document.getElementById('intro');
 
@@ -91,6 +91,25 @@
                     location.href="Register.htm";
                 }
             }
+
+            function loginFunc() {
+                console.log('login')
+                socket.emit('login', {
+                    Id: document.getElementById("id").value,
+                    Password: document.getElementById("password").value
+                })
+                return false
+            }
+            socket.on('login_res', (data) => {
+                if (data)
+                {
+                    alert('로그인 성공')
+                    location.href="PostMessage.htm";
+
+                } else {
+                    alert('로그인 실패')
+                }
+            })
         
         </script>
         <script src="uikit/js/uikit.min.js" ></script>
