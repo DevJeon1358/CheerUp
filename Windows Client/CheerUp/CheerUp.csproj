@@ -40,7 +40,7 @@
     </Reference>
     <Reference Include="SQ_CRE, Version=1.3.5.23, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SQ_CRE.dll</HintPath>
+      <HintPath>..\..\..\..\..\바탕 화면\SQ_CRE.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -100,7 +100,6 @@
     <Compile Include="View\LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Login.cs" />
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>

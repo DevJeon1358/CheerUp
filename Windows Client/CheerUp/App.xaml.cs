@@ -1,5 +1,4 @@
-﻿using CheerUp.Network;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,7 +14,5 @@ namespace CheerUp
     /// 
     public partial class App : Application
     {
-
-        public static NetworkManager socketManager = new NetworkManager();
     }
 }
