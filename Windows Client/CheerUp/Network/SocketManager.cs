@@ -14,6 +14,11 @@ namespace CheerUp.Network
         public delegate void SocketEventHandler(object sender, object resp);
         
         Socket socket = IO.Socket("http://35.220.152.156:80");
+
+        public void Emit(string eventName)
+        {
+            socket.Emit(eventName);
+        }
         public void Emit(string eventName, JObject data)
         {
             //socket.On(Socket.EVENT_CONNECT, () =>

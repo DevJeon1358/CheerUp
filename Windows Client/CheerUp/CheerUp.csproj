@@ -106,8 +106,11 @@
     <Compile Include="Model\Message.cs" />
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Network\Data\Places.cs" />
     <Compile Include="Network\LoginManager.cs" />
+    <Compile Include="Network\PlaceManager.cs" />
     <Compile Include="Network\SocketManager.cs" />
+    <Compile Include="ViewModel\PlaceViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="View\AccountBanWindow.xaml.cs">
       <DependentUpon>AccountBanWindow.xaml</DependentUpon>
