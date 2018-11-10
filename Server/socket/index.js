@@ -43,13 +43,28 @@ const Message = sequelize.define('Message', {
 }, {
   timestamps: false
 })
-
 /**
  * Socket.io 라우팅
  * @param {SocketIO.Socket} client
  */
 function Route(client) {
   console.log('Connect', client.id)
+  client.on('screenMode', function (data) {
+    client.join('screen')
+    Message.findAll({
+      where: {
+        Place: data
+      }
+    })
+    .then(res => {
+      client.emit('init', res)
+    })
+    .catch(err => {
+      console.log(err)
+      client.emit('init', false)
+    })
+  })
+
   client.on('login', function (data) {
     User.findOne({
       where: {
@@ -84,6 +99,7 @@ function Route(client) {
       client.emit('join_res', false)
     })
   })
+  
 }
 
 
