@@ -74,15 +74,15 @@ namespace CheerUp
         }
 
 
-        [STAThread]
-        private void login(string inputId, string inputPw)
+        private bool login(string inputId, string inputPw)
         {
+            bool isRight = false;
+
             App.socketManager.OnLogin(inputId, inputPw);
 
             App.socketManager.EventOn("login_res", (s, e) =>
              {
-                 bool isRight = (bool)e;
-
+                 isRight = (bool)e;
                  if (isRight)
                  {
                     App.Current.Dispatcher.Invoke(() => { // 크로스 스레드를 해결하기 위한 방법
@@ -90,15 +90,15 @@ namespace CheerUp
 
                         MainWindow mWindow = new MainWindow();
                         mWindow.Show();
-                        this.Close();
                     });
                  }
                  else
                  {
                      MessageBox.Show("로그인에 실패했습니다.\n" + "아이디 / 비밀번호를 확인해주세요.");
                  }
-
              });
+
+            return isRight;
             //socket.On("login_res", (data) =>
             //{
             //    Debug.WriteLine(data);

@@ -22,6 +22,8 @@ namespace CheerUp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isLogout = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -49,6 +51,23 @@ namespace CheerUp
             }
 
             // SOME STUFF HERE
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (isLogout)
+            {
+                RegisteryMgr rMgr = new RegisteryMgr();
+                rMgr.delAllUserData("CheerUp");
+
+                //Reboot
+                Process.GetCurrentProcess().Start();
+                Process.GetCurrentProcess().Kill();
+            }
+            else
+            {
+                Process.GetCurrentProcess().Kill();
+            }
         }
     }
 }

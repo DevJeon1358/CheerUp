@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CheerUp"
         mc:Ignorable="d"
-        Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Initialized="Window_Initialized">
+        Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Initialized="Window_Initialized" Closing="Window_Closing">
     <Grid>
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
