@@ -47,7 +47,7 @@ namespace CheerUp.View
                         aWindow.WindowStartupLocation = WindowStartupLocation.Manual;
                         System.Drawing.Rectangle screen = System.Windows.Forms.SystemInformation.VirtualScreen;
                         aWindow.Left = Convert.ToInt32(screen.Right - aWindow.Width - 10);
-                        aWindow.Top = Convert.ToInt32(screen.Bottom - aWindow.Height - 35);
+                        aWindow.Top = Convert.ToInt32(screen.Bottom - aWindow.Height - 50);
                         aWindow.ShowDialog();   
                     }
                     else
@@ -56,7 +56,7 @@ namespace CheerUp.View
                         lWindow.WindowStartupLocation = WindowStartupLocation.Manual;
                         System.Drawing.Rectangle screen = System.Windows.Forms.SystemInformation.VirtualScreen;
                         lWindow.Left = Convert.ToInt32(screen.Right - lWindow.Width - 10);
-                        lWindow.Top = Convert.ToInt32(screen.Bottom - lWindow.Height - 35);
+                        lWindow.Top = Convert.ToInt32(screen.Bottom - lWindow.Height - 50);
                         lWindow.ShowDialog();
                     }
                 }
@@ -66,7 +66,7 @@ namespace CheerUp.View
                     lWindow.WindowStartupLocation = WindowStartupLocation.Manual;
                     System.Drawing.Rectangle screen = System.Windows.Forms.SystemInformation.VirtualScreen;
                     lWindow.Left = Convert.ToInt32(screen.Right - lWindow.Width - 10);
-                    lWindow.Top = Convert.ToInt32(screen.Bottom - lWindow.Height - 35);
+                    lWindow.Top = Convert.ToInt32(screen.Bottom - lWindow.Height - 50);
                     lWindow.ShowDialog();
                 }
             }
