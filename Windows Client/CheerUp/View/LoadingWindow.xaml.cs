@@ -43,12 +43,22 @@ namespace CheerUp.View
                     Object res = rMgr.getUserRegisteryValue("CheerUp", "AutoLogin");
                     if (((string)res).Equals("true"))
                     {
-                        AutoLoginWindow aWindow = new AutoLoginWindow((string)rMgr.getUserRegisteryValue("CheerUp","LID"),(string)rMgr.getUserRegisteryValue("CheerUp","LALP"));
-                        aWindow.WindowStartupLocation = WindowStartupLocation.Manual;
-                        System.Drawing.Rectangle screen = System.Windows.Forms.SystemInformation.VirtualScreen;
-                        aWindow.Left = Convert.ToInt32(screen.Right - aWindow.Width - 10);
-                        aWindow.Top = Convert.ToInt32(screen.Bottom - aWindow.Height - 50);
-                        aWindow.ShowDialog();   
+                        bool result_login = login((string)rMgr.getUserRegisteryValue("CheerUp", "LID"), (string)rMgr.getUserRegisteryValue("CheerUp", "LALP"));
+                        if (result_login)
+                        {
+                            MainWindow mWindow = new MainWindow();
+                            mWindow.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+                            LoginWindow lWindow = new LoginWindow();
+                            lWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+                            System.Drawing.Rectangle screen = System.Windows.Forms.SystemInformation.VirtualScreen;
+                            lWindow.Left = Convert.ToInt32(screen.Right - lWindow.Width - 10);
+                            lWindow.Top = Convert.ToInt32(screen.Bottom - lWindow.Height - 50);
+                            lWindow.ShowDialog();
+                        }
                     }
                     else
                     {
@@ -76,6 +86,54 @@ namespace CheerUp.View
                 Process.GetCurrentProcess().Kill();
             }
             this.Close();
+        }
+
+        private bool login(string inputId, string inputPw)
+        {
+            bool isRight = false;
+
+            App.socketManager.OnLogin(inputId, inputPw);
+
+            App.socketManager.EventOn("login_res", (s, e) =>
+            {
+                isRight = (bool)e;
+                if (isRight)
+                {
+                    App.Current.Dispatcher.Invoke(() => { // 크로스 스레드를 해결하기 위한 방법
+                        MainWindow mWindow = new MainWindow();
+                        mWindow.Show();
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("로그인에 실패했습니다.\n" + "아이디 / 비밀번호를 확인해주세요.");
+                }
+            });
+
+            return isRight;
+            //socket.On("login_res", (data) =>
+            //{
+            //    Debug.WriteLine(data);
+
+            //    if (data != null)
+            //    {
+            //        switch (data)
+            //        {
+            //            case true:
+            //                result = true;
+            //                break;
+
+            //            case false:
+            //                result = false;
+            //                break;
+
+            //            default:
+            //                result = false;
+            //                break;
+            //        }
+            //    }
+            //    isend = true;
+            //});
         }
     }
 }

@@ -140,25 +140,29 @@ function Route(client) {
   client.on('getplace', function () {
     Place.findAll()
     .then(res => {
+      console.log('getplace_res', res)
       client.emit('getplace_res', res)
     })
   })
   client.on('addmessage', function (data) {
-    if (!client.userId)
-      client.emit('addmessage_res', false)
+    if (!data.User)
+      if (!client.userId)
+        client.emit('addmessage_res', false)
     if (!(data && data.Content && data.Place))
       client.emit('addmessage_res', false)
     Message.create({
       Content: data.Content,
-      User: client.userId,
+      User: data.User || client.userId,
       Place: data.Place
     })
     .then(res => {
       console.log(res)
       client.emit('addmessage_res', true)
       client.to('screen' + data.Place).emit('change', res.dataValues)
-      if (currentClient)
-        currentClient.emit(Buffer.from(JSON.stringify(res.dataValues)))
+      if (currentClient) {
+        console.log('tcp client send')
+        currentClient.write(Buffer.from(JSON.stringify(res.dataValues)))
+      }
     })
     .catch(err => {
       client.emit('addmessage_res', false)

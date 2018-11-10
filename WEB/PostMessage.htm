@@ -10,41 +10,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="uikit/css/uikit.min.css" />
     <link rel="stylesheet" href="ContentStyle.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <script src="PostMessage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 
     <script>
-        var socket = io.connect('35.220.152.156')
-        socket.emit('screenMode', 1)
-        socket.on('init', (data)=> {
-            for(d of data)
-            AddContent(d.Content)
+        var socket = io.connect('35.220.152.156');
+        var request = new Request();
+        var roomNum = request.getParameter("room_number");
+        socket.emit('screenMode', roomNum)
+        socket.emit('login',{Id:'test' ,Password:'1234'})
+        socket.on('init', (data) => {
+            for (d of data)
+                AddContent(d.Content)
         })
         socket.on('change', (data) => {
             AddContent(d.Content)
         })
-
-        $(function(){
-            MainContent()
+        socket.on('addmessage_res',(data)=>{
+            console.log(data)
+        })
+        $(function () {
+            MainContent(roomNum)
         })
     </script>
 </head>
 
 <body>
-        <div id="bg" class="uk-inline">
-                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow>
+    <div id="bg" class="uk-inline">
+        <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow>
 
-                        <ul class="uk-slideshow-items">
-                            
-                        </ul>
-                    
-                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-                    
-                    </div>
+            <ul class="uk-slideshow-items">
+
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
         </div>
-    
+    </div>
+
 
     <script src="uikit/js/uikit.min.js"></script>
     <script src="uikit/js/uikit-icons.min.js"></script>

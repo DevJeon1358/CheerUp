@@ -95,19 +95,18 @@ namespace CheerUp
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (isLogout)
-            {
-                RegisteryMgr rMgr = new RegisteryMgr();
-                rMgr.delAllUserData("CheerUp");
+            Process.GetCurrentProcess().Kill();
+        }
 
-                //Reboot
-                Process.GetCurrentProcess().Start();
-                Process.GetCurrentProcess().Kill();
-            }
-            else
-            {
-                Process.GetCurrentProcess().Kill();
-            }
+        private void logoout_btn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            RegisteryMgr rMgr = new RegisteryMgr();
+            rMgr.setUserRegisteryValue("CheerUp", "AutoLogin", "false");
+            rMgr.setUserRegisteryValue("CheerUp", "LID", "null");
+            rMgr.setUserRegisteryValue("CheerUp", "LALP", "null");
+
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }

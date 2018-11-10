@@ -60,7 +60,7 @@ namespace CheerUp
                 RegisteryMgr rMgr = new RegisteryMgr();
                 rMgr.setUserRegisteryValue("CheerUp", "AutoLogin", "true");
                 rMgr.setUserRegisteryValue("CheerUp", "LID", id_textbox.Text);
-                rMgr.setUserRegisteryValue("CheerUp", "LALP", id_textbox.Text);
+                rMgr.setUserRegisteryValue("CheerUp", "LALP", password_textbox.Password);
             }
 
             if (inputId != string.Empty && inputPw != string.Empty)
