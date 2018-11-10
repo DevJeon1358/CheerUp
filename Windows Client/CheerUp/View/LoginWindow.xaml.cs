@@ -60,7 +60,7 @@ namespace CheerUp
                 RegisteryMgr rMgr = new RegisteryMgr();
                 rMgr.setUserRegisteryValue("CheerUp", "AutoLogin", "true");
                 rMgr.setUserRegisteryValue("CheerUp", "LID", id_textbox.Text);
-                rMgr.setUserRegisteryValue("CheerUp", "LALP", id_textbox.Text);
+                rMgr.setUserRegisteryValue("CheerUp", "LALP", password_textbox.Password);
             }
 
             if (inputId != string.Empty && inputPw != string.Empty)
@@ -74,29 +74,31 @@ namespace CheerUp
         }
 
 
-        [STAThread]
-        private void login(string inputId, string inputPw)
+        private bool login(string inputId, string inputPw)
         {
+            bool isRight = false;
+
             App.socketManager.OnLogin(inputId, inputPw);
 
             App.socketManager.EventOn("login_res", (s, e) =>
              {
-                 bool isRight = (bool)e;
-
+                 isRight = (bool)e;
                  if (isRight)
                  {
                     App.Current.Dispatcher.Invoke(() => { // 크로스 스레드를 해결하기 위한 방법
+
+                        getPlace();
                         MainWindow mWindow = new MainWindow();
                         mWindow.Show();
-                        this.Close();
                     });
                  }
                  else
                  {
                      MessageBox.Show("로그인에 실패했습니다.\n" + "아이디 / 비밀번호를 확인해주세요.");
                  }
-
              });
+
+            return isRight;
             //socket.On("login_res", (data) =>
             //{
             //    Debug.WriteLine(data);
@@ -120,6 +122,18 @@ namespace CheerUp
             //    }
             //    isend = true;
             //});
+        }
+
+        private void getPlace()
+        {
+            App.socketManager.GetPlaceList();
+            App.socketManager.EventOn("getplace_res", (s, e) => 
+            {
+                foreach(Place item in (List<Place>)e)
+                {
+                    App.placeViewModel.Add(item);
+                }
+            });
         }
 
         private void password_textbox_PasswordChanged(object sender, RoutedEventArgs e)

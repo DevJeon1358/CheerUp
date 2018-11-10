@@ -18,5 +18,6 @@ namespace CheerUp
     {
         public static SocketManager socketManager = new SocketManager();
         public static UserViewModel userViewModel = new UserViewModel();
+        public static PlaceViewModel placeViewModel = new PlaceViewModel();
     }
 }

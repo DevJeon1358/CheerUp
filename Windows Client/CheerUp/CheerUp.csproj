@@ -107,7 +107,9 @@
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Network\LoginManager.cs" />
+    <Compile Include="Network\PlaceManager.cs" />
     <Compile Include="Network\SocketManager.cs" />
+    <Compile Include="ViewModel\PlaceViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="View\AccountBanWindow.xaml.cs">
       <DependentUpon>AccountBanWindow.xaml</DependentUpon>
@@ -156,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\" />
+    <Folder Include="Network\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Header.png" />

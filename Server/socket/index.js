@@ -5,7 +5,7 @@ const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password
   dialect: "mysql",
   timezone: '+09:00'
 })
-const currentClient = null
+var currentClient = null
 /*
 +----------+---------+------+-----+---------+----------------+
 | Field    | Type    | Null | Key | Default | Extra          |
@@ -140,6 +140,7 @@ function Route(client) {
   client.on('getplace', function () {
     Place.findAll()
     .then(res => {
+      console.log('getplace_res', res)
       client.emit('getplace_res', res)
     })
   })
@@ -173,9 +174,11 @@ var server = net.createServer(function (client) {
   console.log('Client connected')
   client.on('data', function (data) {
     data = data.toString()
+    console.log('tcpget', data)
     const command = data.split(' ')[0]
     if (command === 'init')
     {
+      console.log('tcp init')
       const place = data.split(' ')[1]
       currentClient = client
       Message.findAll({
@@ -184,12 +187,19 @@ var server = net.createServer(function (client) {
         }
       })
       .then(res => {
-        client.emit('data', Buffer.from(JSON.stringify(res)))
+        console.log('tcp', res)
+        client.write(Buffer.from(JSON.stringify(res)))
       })
       .catch(err => {
         console.log(err)
       })
     }
+  })
+  client.on('close', () => {
+    console.log('tcp client disconnect')
+  })
+  client.on('error', () => {
+    client.end()
   })
 })
 
