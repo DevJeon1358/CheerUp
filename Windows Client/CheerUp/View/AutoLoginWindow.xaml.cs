@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,22 +18,11 @@ namespace CheerUp
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class AutoLoginWindow : Window
     {
-        public LoginWindow()
+        public AutoLoginWindow()
         {
             InitializeComponent();
-        }
-
-        public void ShowRegisterForm(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                //WEB URL
-                Process.Start("http://WEBURL");
-            }
-            catch (Exception)
-            {}
         }
     }
 }

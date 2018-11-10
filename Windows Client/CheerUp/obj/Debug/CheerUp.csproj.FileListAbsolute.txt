@@ -28,3 +28,9 @@ C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\De
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.g.resources
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.Properties.Resources.resources
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.csproj.GenerateResource.Cache
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoginWindow.g.cs
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoginWindow.baml
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AccountBanWindow.g.cs
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.g.cs
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AccountBanWindow.baml
+C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.baml

@@ -22,10 +22,10 @@
                 </Grid>
                 <Label x:Name="connetion_info_label" Content="연결됨" HorizontalAlignment="Center" Margin="156,582,156,-4" VerticalAlignment="Top" FontFamily="NanumGothic" Foreground="White" FontSize="10" HorizontalContentAlignment="Center"/>
                 <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>
-                <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png"/>
-                <Image x:Name="filter_btn" HorizontalAlignment="Left" Height="25" Margin="310,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/filter.png"/>
+                <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png" Cursor="Hand"/>
+                <Image x:Name="filter_btn" HorizontalAlignment="Left" Height="25" Margin="310,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/filter.png" Cursor="Hand"/>
                 <Label x:Name="header_label" Content="응원하기" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
-                <Image x:Name="back_btn" HorizontalAlignment="Left" Height="25" Margin="15,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="back_btn" HorizontalAlignment="Left" Height="25" Margin="15,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand">
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -35,11 +35,11 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-                <Image x:Name="next_btn" HorizontalAlignment="Left" Height="25" Margin="310,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5"/>
+                <Image x:Name="next_btn" HorizontalAlignment="Left" Height="25" Margin="310,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand"/>
                 <Label x:Name="cheercount_label" Content="누적 응원 : 097 건" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumGothic"/>
                 <Label x:Name="place_label" Content="강당" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
-                <Image x:Name="account_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/account.png"/>
-                <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="285,122,0,0" VerticalAlignment="Top" Width="50" Source="../Image/refresh.png"/>
+                <Image x:Name="logoout_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/logout.png" Cursor="Hand"/>
+                <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="285,122,0,0" VerticalAlignment="Top" Width="50" Source="../Image/refresh.png" Cursor="Hand"/>
 
             </Grid>
         </Border>
