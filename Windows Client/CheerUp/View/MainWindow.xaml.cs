@@ -16,6 +16,7 @@ using SQ_CRE;
 using System.Diagnostics;
 using CheerUp.Model;
 using System.ComponentModel;
+using Newtonsoft.Json.Linq;
 
 namespace CheerUp
 {
@@ -31,8 +32,8 @@ namespace CheerUp
 
         public MainWindow()
         {
-            InitPlace();
             InitializeComponent();
+            this.send_textbox.DataContext = this;
         }
 
         private void ServerChecker_DoWork(object sender, DoWorkEventArgs e)
@@ -80,9 +81,9 @@ namespace CheerUp
         private void getMessage()
         {
             App.socketManager.SendCurPlace();
-
             App.socketManager.EventOn("init", (s, e) =>
             {
+                Debug.WriteLine("Event On init (From MainWindow)");
                 List<Message> response = e as List<Message>;
 
                 foreach (Message item in response)
@@ -97,9 +98,10 @@ namespace CheerUp
         private void getPlace()
         {
             App.socketManager.GetPlaceList();
-            App.socketManager.EventOn("getplace_res", (v, g) =>
+            App.socketManager.EventOn("getplace_res", (s, e) =>
             {
-                foreach (Place item in (List<Place>)g)
+                Debug.WriteLine("Event On getplace_res (From MainWindow)");
+                foreach (Place item in (List<Place>)e)
                 {
                     Debug.WriteLine(item.Idx);
                     App.placeViewModel.Add(item);
@@ -156,6 +158,18 @@ namespace CheerUp
             serverConnectCheck.Interval = 3000;
             serverConnectCheck.Tick += ServerConnectCheck_Tick;
             serverConnectCheck.Start();
+            InitPlace();
+            getMessage();
+        }
+
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(send_textbox.Text))
+            {
+                App.socketManager.Emit("addmessage", JObject.FromObject(new { Content = send_textbox.Text, Place = 1 }));
+                Debug.WriteLine("addmessage called (from mainwindow)");
+                send_textbox.Text = string.Empty;
+            }
         }
     }
 }

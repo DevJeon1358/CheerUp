@@ -82,6 +82,7 @@ namespace CheerUp
 
             App.socketManager.EventOn("login_res", (s, e) =>
              {
+                 Debug.WriteLine("Event ON login_res (From LoginWindow");
                  isRight = (bool)e;
                  if (isRight)
                  {
