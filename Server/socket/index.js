@@ -5,7 +5,7 @@ const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password
   dialect: "mysql",
   timezone: '+09:00'
 })
-const currentClient = null
+var currentClient = null
 /*
 +----------+---------+------+-----+---------+----------------+
 | Field    | Type    | Null | Key | Default | Extra          |
