@@ -48,7 +48,9 @@ namespace CheerUp
                 Process.GetCurrentProcess().Kill();
             }
 
+            //
             // SOME STUFF HERE
+            //
         }
     }
 }
