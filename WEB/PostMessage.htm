@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cheer Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
+        <style>
+            
+            #bg{ /* 백그라운드  */
+                width: 100%;
+                height: 100vh;
+                background-color: #292c35;
+            }
+
+            #content{ /* 내용 */
+                padding: 0px;
+                width: 60%;
+                height: 60vh;
+                background-color: #3a4151;
+                border-radius: 20px;
+                box-shadow: 0px 0px 100px black;
+                overflow: hidden;
+            }
+            
+            #content-top{
+                width: 120%;
+                height: 50%;
+                background-color: #5bdaa5;
+                box-shadow: 0px 0px 30px black;
+                transform: rotate(2.5deg) translateX(-10%) translateY(-50px);
+                display:inline-block;
+                position: absolute;
+                left:0;
+                right:0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="bg" class="uk-inline">
+        
+            <div id="content" class="uk-position-center uk-overlay uk-overlay-default">
+                <!-- 색깔 -->
+                <div id="content-top"></div>
+
+            </div>
+            
+        </div>
+        
+        <script src="uikit/js/uikit.min.js" ></script>
+        <script src="uikit/js/uikit-icons.min.js" ></script>
+    </body>
+</html>
