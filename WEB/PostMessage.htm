@@ -1,81 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Cheer Up</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="uikit/css/uikit.min.css"/>
-        <style>
-           
-            #bg{ /* 백그라운드  */
-                width: 100%;
-                height: 100vh;
-                background-color: #292c35;
-            }
 
-            #content{ /* 내용 */
-                padding: 0px;
-                width: 60%;
-                height: 60vh;
-                background-color: #3a4151;
-                border-radius: 20px;
-                box-shadow: 0px 0px 100px black;
-                overflow: hidden;
-            }
-            
-            #content_top{ /* 내용 위쪽에 색깔 입히기 */
-                width: 120%;
-                height: 50%;
-                background-color: #5bdaa5;
-                box-shadow: 0px 0px 30px black;
-                transform: rotate(-2deg) translateX(-10%) translateY(-50%);
-                display: inline-block;
-                position: absolute;
-                left:0;
-                right:0;
-            }
+<head>
+    <!-- 응원메세지를 작성하는 웹입니다. -->
+    <title>Cheer Up</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="uikit/css/uikit.min.css" />
+    <link rel="stylesheet" href="ContentStyle.css" />
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+</head>
 
-            .title{ /* 제목 */
-                padding-left: 30px;
-                margin-bottom: 0px;
-                font-size: 35px;
-                color: white;
-                position: relative;
-                z-index: 5;
-            }
-
-            .title_sub{ /* 소제목 */
-                padding-left: 30px;
-                padding-bottom: 20px;
-                margin-top: 10px;
-                font-size: 15px;
-                color: white;
-                position: relative;
-                z-index: 5;
-            }
-
-        </style>
-    </head>
-    <body>
+<body>
         <div id="bg" class="uk-inline">
         
-            <div id="content" class="uk-position-center uk-overlay uk-overlay-default">
-                
-                <!-- 색깔 -->
-                <div id="content_top"></div>
-                
-                <p class="title">CheerUp</p>
-                <p class="title_sub">응원메세지를 남겨주세요!!</p>
-
-                <form>
-                   <img src="img/contentIcon.png">
-                </form>
-
             </div>
-            
-        </div>
-        
-        <script src="uikit/js/uikit.min.js" ></script>
-        <script src="uikit/js/uikit-icons.min.js" ></script>
-    </body>
+    <script type="text/javascript">
+        function AddContent(message) {
+            var content = $('<div id="content" class="uk-position-center uk-overlay uk-overlay-default"></div>');
+            var content_top = $('<div id="content_top"></div>');
+            var top_div = $(`
+                                    <div class="top_div">
+                                            <img class="title" src="img/logo.png">
+                                            <p class="title_sub">응원메세지를 남겨주세요!!</p>
+                                        </div>`);
+            var main_div = $('<div class="main_div"></div>');
+            var form = $(`<form/>`);
+            var h1 = $(`<h1 class="main_div_title uk-heading-line uk-text-center"><span>응원 메세지</span></h1>`);
+            var textarea = $(`<textarea class="cheerup_textarea">{{message}}</textarea>`);
+            var input = $('<input class="submit_btn uk-button uk-button-small uk-button-secondary uk-position-bottom-right uk-position-large" type="submit" value="제출">');
+
+            form.append(h1);
+            form.append(textarea);
+            form.append(input);
+
+            main_div.append(form);
+
+            content.append(content_top);
+            content.append(top_div);
+            content.append(main_div);
+
+            $('#bg').append(content);
+        }
+        AddContent('민바규보');
+        var app = new Vue({
+            el: '.cheerup_textarea',
+            data: {
+                message: 'sdklfj Vue!'
+            }
+        });
+    </script>
+
+
+
+    <script src="uikit/js/uikit.min.js"></script>
+    <script src="uikit/js/uikit-icons.min.js"></script>
+</body>
+
 </html>

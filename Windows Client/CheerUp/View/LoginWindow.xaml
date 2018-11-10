@@ -10,8 +10,8 @@
         <Border CornerRadius="5" Background="#673ab7">
             <Grid Background="Transparent">
                 <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
-                    <TextBox x:Name="id_textbox" HorizontalAlignment="Left" Height="28" Margin="26,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
-                    <PasswordBox x:Name="password_textbox" HorizontalAlignment="Left" Height="28" Margin="26,291,0,0" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
+                    <TextBox x:Name="id_textbox" Text="{Binding Id}" HorizontalAlignment="Left" Height="28" Margin="26,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
+                    <PasswordBox x:Name="password_textbox" PasswordChanged="password_textbox_PasswordChanged" HorizontalAlignment="Left" Height="28" Margin="26,291,0,0" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" BorderBrush="{x:Null}" Foreground="White" Background="#FF424242" FontFamily="NanumGothic"/>
                     <CheckBox x:Name="AutoLogin_Checkbox" Content="자동 로그인" HorizontalAlignment="Left" Margin="26,392,0,0" VerticalAlignment="Top" FontFamily="NanumGothic" BorderBrush="#FF646464" Foreground="White" VerticalContentAlignment="Center"/>
                 </Grid>
                 <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>

@@ -1,4 +1,5 @@
-﻿using SQ_CRE;
+﻿using CheerUp.Model;
+using SQ_CRE;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,7 +30,10 @@ namespace CheerUp
         public LoginWindow()
         {
             InitializeComponent();
+
+            this.DataContext = App.userViewModel.user;
         }
+
 
         public void ShowRegisterForm(object sender, RoutedEventArgs e)
         {
@@ -41,12 +45,15 @@ namespace CheerUp
             catch (Exception)
             {
                 //브라우저 문제
-                MessageBox.Show("회원가입 창을 뛰우는데 실패했습니다.\n" + RegisterUrl + "주소로 접속을 시도해보십시오.");
+                MessageBox.Show("회원가입 창을 띄우는데 실패했습니다.\n" + RegisterUrl + "주소로 접속을 시도해보십시오.");
             }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            string inputId = ((User)this.DataContext).Id;
+            string inputPw = ((User)this.DataContext).Password;
+
             //자동 로그인 정보 등록
             if (AutoLogin_Checkbox.IsChecked == true)
             {
@@ -56,11 +63,67 @@ namespace CheerUp
                 rMgr.setUserRegisteryValue("CheerUp", "LALP", id_textbox.Text);
             }
 
-            //로그인 수행 후 최종 폼 보이기
-            MainWindow mWindow = new MainWindow();
-            mWindow.Show();
+            if (inputId != null && inputPw != null)
+            {
+                login(inputId, inputPw);
+            }
+            else
+            {
+                MessageBox.Show("로그인에 실패했습니다.\n" + "입력 양식을 확인해주세요.");
+            }
+        }
 
-            this.Close();
+
+
+        private void login(string inputId, string inputPw)
+        {
+            App.socketManager.OnLogin(inputId, inputPw);
+
+            App.socketManager.EventOn("login_res", (s, e) =>
+             {
+                 bool isRight = (bool)e;
+
+                 if (isRight)
+                 {
+                     MainWindow mWindow = new MainWindow();
+                     mWindow.Show();
+                     this.Close();
+                 }
+                 else
+                 {
+                     MessageBox.Show("로그인에 실패했습니다.\n" + "아이디 / 비밀번호를 확인해주세요.");
+                 }
+
+             });
+            //socket.On("login_res", (data) =>
+            //{
+            //    Debug.WriteLine(data);
+
+            //    if (data != null)
+            //    {
+            //        switch (data)
+            //        {
+            //            case true:
+            //                result = true;
+            //                break;
+
+            //            case false:
+            //                result = false;
+            //                break;
+
+            //            default:
+            //                result = false;
+            //                break;
+            //        }
+            //    }
+            //    isend = true;
+            //});
+        }
+
+        private void password_textbox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            App.userViewModel.user.Password = password_textbox.Password;
         }
     }
+
 }
