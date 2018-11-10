@@ -66,15 +66,15 @@ html{
 .main_div{ /* 내용 */
     margin-top: 8%;
     color: white;
-    padding-left: 10%;
-    width: 80%;
+    padding-left: 7%;
+    width: 86%;
     height: 200px;
 }
 
 /* #################### PostMessage에서 사용됨 */
 
 li{
-    display: inline; 
+    display: inline;
 }
 
 .main_div_title{
@@ -104,4 +104,11 @@ li{
 
 /* #################### ChoiceRoom에서 사용됨 */
 
+.room{
+    border-radius: 10px;
+}
+
+.room h3{
+    font-family: 'Jua', sans-serif;
+}
 

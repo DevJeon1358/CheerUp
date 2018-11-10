@@ -13,7 +13,7 @@ function MainContent() {
     var form = $(`<form/>`);
     var h1 = $(`<h1 class="main_div_title uk-heading-line uk-text-center"><span>응원 메세지</span></h1>`);
     var textarea = $(`<textarea class="cheerup_textarea"></textarea>`);
-    var input = $('<input class="submit_btn uk-button uk-button-small uk-button-secondary uk-position-bottom-right uk-position-large" type="submit" value="제출">');
+    var input = $('<input class="submit_btn uk-button uk-button-small uk-button-secondary uk-position-bottom-right uk-position-large" type="submit" value="전송">');
 
     form.append(h1);
     form.append(textarea);
