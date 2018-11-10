@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,15 @@ namespace CheerUp
     /// </summary>
     public partial class AutoLoginWindow : Window
     {
-        public AutoLoginWindow()
+        public AutoLoginWindow(string userId, string password)
         {
             InitializeComponent();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //Process Kill
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

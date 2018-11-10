@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\App.xaml
-4747978651
+5785930056
 
-15-1049508429
-13738642453
-View\AccountBanWindow.xaml;View\AutoLoginWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
+16-139998228
+161511252262
+View\AccountBanWindow.xaml;View\AutoLoginWindow.xaml;View\LoadingWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;
 
-False
+True
 
