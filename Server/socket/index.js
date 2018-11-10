@@ -173,6 +173,7 @@ var server = net.createServer(function (client) {
   console.log('Client connected')
   client.on('data', function (data) {
     data = data.toString()
+    console.log('tcpget', data)
     const command = data.split(' ')[0]
     if (command === 'init')
     {
@@ -185,8 +186,8 @@ var server = net.createServer(function (client) {
         }
       })
       .then(res => {
-        console.log('tcp', res.dataValues)
-        client.write(Buffer.from(JSON.stringify(res.dataValues)))
+        console.log('tcp', res)
+        client.write(Buffer.from(JSON.stringify(res)))
       })
       .catch(err => {
         console.log(err)
