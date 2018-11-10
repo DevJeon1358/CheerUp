@@ -24,12 +24,50 @@ namespace CheerUp
     public partial class MainWindow : Window
     {
         private bool isLogout = false;
+        private Place curPlace = new Place();
 
         public MainWindow()
         {
+            InitPlace();
             InitializeComponent();
         }
 
+        private void InitPlace()
+        {
+            getPlace();
+        }
+
+        private void getMessage()
+        {
+            App.socketManager.SendCurPlace();
+
+            App.socketManager.EventOn("init", (s, e) =>
+            {
+                List<Message> response = e as List<Message>;
+
+                foreach (Message item in response)
+                {
+                    App.messageViewModel.Add(item);
+                    CheerlistView.ItemsSource = App.messageViewModel.Items;
+                    gdCurPlace.DataContext = curPlace;
+                }
+            });
+        }
+
+        private void getPlace()
+        {
+            App.socketManager.GetPlaceList();
+            App.socketManager.EventOn("getplace_res", (v, g) =>
+            {
+                foreach (Place item in (List<Place>)g)
+                {
+                    Debug.WriteLine(item.Idx);
+                    App.placeViewModel.Add(item);
+                    curPlace = App.placeViewModel.Items[0];
+                }
+            });
+
+        }
         /// <summary>
         /// Init Event
         /// </summary>
