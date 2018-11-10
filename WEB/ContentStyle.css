@@ -70,6 +70,11 @@ html{
     font-size: 20px;
 }
 
+.other_message{
+    color: white;
+    font-size: 25px;
+}
+
 .cheerup_textarea{
     width: 96%;
     height: 100px;

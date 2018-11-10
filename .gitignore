@@ -297,3 +297,10 @@ Windows Client/CheerUp/obj/Debug/View/LoadingWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
 Windows Client/packages/WebSocket4Net.0.15.2/WebSocket4Net.0.15.2.nupkg
 *.nupkg
+Windows Client/packages/System.Collections.Immutable.1.5.0/.signature.p7s
+Windows Client/packages/System.Collections.Immutable.1.5.0/LICENSE.TXT
+Windows Client/packages/System.Collections.Immutable.1.5.0/THIRD-PARTY-NOTICES.TXT
+Windows Client/packages/System.Collections.Immutable.1.5.0/useSharedDesignerContext.txt
+Windows Client/packages/System.Collections.Immutable.1.5.0/version.txt
+Windows Client/CheerUp/bin/Debug/CheerUp.exe
+Windows Client/CheerUp/bin/Debug/CheerUp.exe

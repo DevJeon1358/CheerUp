@@ -52,8 +52,8 @@
       <HintPath>..\packages\SuperSocket.ClientEngine.Core.0.10.0\lib\net45\SuperSocket.ClientEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -107,7 +107,9 @@
     <Compile Include="Model\Place.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Network\LoginManager.cs" />
+    <Compile Include="Network\PlaceManager.cs" />
     <Compile Include="Network\SocketManager.cs" />
+    <Compile Include="ViewModel\PlaceViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="View\AccountBanWindow.xaml.cs">
       <DependentUpon>AccountBanWindow.xaml</DependentUpon>
@@ -156,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\" />
+    <Folder Include="Network\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Header.png" />

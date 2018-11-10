@@ -5,6 +5,7 @@ const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password
   dialect: "mysql",
   timezone: '+09:00'
 })
+var currentClient = null
 /*
 +----------+---------+------+-----+---------+----------------+
 | Field    | Type    | Null | Key | Default | Extra          |
@@ -139,23 +140,29 @@ function Route(client) {
   client.on('getplace', function () {
     Place.findAll()
     .then(res => {
+      console.log('getplace_res', res)
       client.emit('getplace_res', res)
     })
   })
   client.on('addmessage', function (data) {
-    if (!client.userId)
-      client.emit('addmessage_res', false)
+    if (!data.User)
+      if (!client.userId)
+        client.emit('addmessage_res', false)
     if (!(data && data.Content && data.Place))
       client.emit('addmessage_res', false)
     Message.create({
       Content: data.Content,
-      User: client.userId,
+      User: data.User || client.userId,
       Place: data.Place
     })
     .then(res => {
       console.log(res)
       client.emit('addmessage_res', true)
       client.to('screen' + data.Place).emit('change', res.dataValues)
+      if (currentClient) {
+        console.log('tcp client send')
+        currentClient.write(Buffer.from(JSON.stringify(res.dataValues)))
+      }
     })
     .catch(err => {
       client.emit('addmessage_res', false)
@@ -164,5 +171,41 @@ function Route(client) {
   
 }
 
+const net = require('net')
+
+var server = net.createServer(function (client) {
+  console.log('Client connected')
+  client.on('data', function (data) {
+    data = data.toString()
+    console.log('tcpget', data)
+    const command = data.split(' ')[0]
+    if (command === 'init')
+    {
+      console.log('tcp init')
+      const place = data.split(' ')[1]
+      currentClient = client
+      Message.findAll({
+        where: {
+          Place: place
+        }
+      })
+      .then(res => {
+        console.log('tcp', res)
+        client.write(Buffer.from(JSON.stringify(res)))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  })
+  client.on('close', () => {
+    console.log('tcp client disconnect')
+  })
+  client.on('error', () => {
+    client.end()
+  })
+})
+
+server.listen(3030)
 
 module.exports = Route

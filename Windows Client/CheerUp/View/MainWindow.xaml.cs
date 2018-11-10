@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SQ_CRE;
 using System.Diagnostics;
+using CheerUp.Model;
 
 namespace CheerUp
 {
@@ -22,6 +23,8 @@ namespace CheerUp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isLogout = false;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -48,7 +51,24 @@ namespace CheerUp
                 Process.GetCurrentProcess().Kill();
             }
 
+
             // SOME STUFF HERE
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Process.GetCurrentProcess().Kill();
+        }
+
+        private void logoout_btn_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            RegisteryMgr rMgr = new RegisteryMgr();
+            rMgr.setUserRegisteryValue("CheerUp", "AutoLogin", "false");
+            rMgr.setUserRegisteryValue("CheerUp", "LID", "null");
+            rMgr.setUserRegisteryValue("CheerUp", "LALP", "null");
+
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }
