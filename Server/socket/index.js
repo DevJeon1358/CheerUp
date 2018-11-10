@@ -185,8 +185,8 @@ var server = net.createServer(function (client) {
         }
       })
       .then(res => {
-        console.log('tcp', res)
-        client.emit('data', Buffer.from(JSON.stringify(res)))
+        console.log('tcp', res.dataValues)
+        client.write(Buffer.from(JSON.stringify(res.dataValues)))
       })
       .catch(err => {
         console.log(err)
