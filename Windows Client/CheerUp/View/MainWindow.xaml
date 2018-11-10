@@ -56,6 +56,10 @@
                                 <GridViewColumn/>
                             </GridView>
                         </ListView.View>
+                        <Label Content="와이파이 AP 수고하셨어요" Foreground="White" FontFamily="NanumGothic"/>
+                        <Label Content="중학생분들 수고하셨어요" Foreground="White" FontFamily="NanumGothic"/>
+                        <Label Content="대소고 학생들 수고하셨어요" Foreground="White" FontFamily="NanumGothic"/>
+                        <Label Content="STAFF 분들도 수고하셨어요" Foreground="White" FontFamily="NanumGothic"/>
                     </ListView>
                 </Grid>
                 <Label x:Name="connetion_info_label" Content="연결됨" HorizontalAlignment="Center" Margin="0,582,0,-4" VerticalAlignment="Top" FontFamily="NanumGothic" Foreground="White" FontSize="10" HorizontalContentAlignment="Center" Width="350"/>
@@ -75,7 +79,7 @@
                 <Image x:Name="next_btn" HorizontalAlignment="Left" Height="25" Margin="310,85,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/next.png" RenderTransformOrigin="0.5,0.5" Cursor="Hand"/>
                 <Grid x:Name="gdCurPlace">
                     <Label x:Name="cheercount_label" Content="누적 응원 : 097 건" HorizontalAlignment="Left" Margin="50,73,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumGothic"/>
-                    <Label x:Name="place_label" Content="{Binding Name, Mode=TwoWay}" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
+                    <Label x:Name="place_label" Content="강당" HorizontalAlignment="Left" Margin="50,94,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumGothic" FontWeight="Bold"/>
                 </Grid>
                 <Image x:Name="logoout_btn" HorizontalAlignment="Left" Height="25" Margin="275,15,0,0" VerticalAlignment="Top" Width="25" Source="/CheerUp;component/Image/logout.png" Cursor="Hand" MouseLeftButtonDown="logoout_btn_MouseLeftButtonDown"/>
                 <Image x:Name="image" HorizontalAlignment="Left" Height="50" Margin="285,122,0,0" VerticalAlignment="Top" Width="50" Source="../Image/refresh.png" Cursor="Hand"/>
