@@ -295,3 +295,5 @@ Windows Client/CheerUp/obj/Debug/View/AccountBanWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/AutoLoginWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/LoadingWindow.g.i.cs
 Windows Client/CheerUp/obj/Debug/View/MainWindow.g.i.cs
+Windows Client/packages/WebSocket4Net.0.15.2/WebSocket4Net.0.15.2.nupkg
+*.nupkg
