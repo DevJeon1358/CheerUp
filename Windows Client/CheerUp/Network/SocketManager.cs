@@ -16,10 +16,12 @@ namespace CheerUp.Network
         Socket socket = IO.Socket("http://35.220.152.156:80");
         public void Emit(string eventName, JObject data)
         {
-            socket.On(Socket.EVENT_CONNECT, () =>
-            {
-                socket.Emit(eventName, data);
-            });
+            //socket.On(Socket.EVENT_CONNECT, () =>
+            //{
+            //    socket.Emit(eventName, data);
+            //}); // 왠지 몰라도 오류 발생
+
+            socket.Emit(eventName, data);
         }
 
         public void EventOn(string eventName, SocketEventHandler OnDataGetEnded)
@@ -28,9 +30,12 @@ namespace CheerUp.Network
             {
                 if (data != null)
                 {
+                    Debug.WriteLine(data);
+
                     if (OnDataGetEnded != null)
                     {
                         OnDataGetEnded(this, data);
+                        socket.Close();
                     }
                 }
             });

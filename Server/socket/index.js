@@ -5,6 +5,7 @@ const sequelize = new Sequelize(sqlInfo.database, sqlInfo.user, sqlInfo.password
   dialect: "mysql",
   timezone: '+09:00'
 })
+const currentClient = null
 /*
 +----------+---------+------+-----+---------+----------------+
 | Field    | Type    | Null | Key | Default | Extra          |
@@ -156,6 +157,8 @@ function Route(client) {
       console.log(res)
       client.emit('addmessage_res', true)
       client.to('screen' + data.Place).emit('change', res.dataValues)
+      if (currentClient)
+        currentClient.emit(Buffer.from(JSON.stringify(res.dataValues)))
     })
     .catch(err => {
       client.emit('addmessage_res', false)
@@ -164,5 +167,32 @@ function Route(client) {
   
 }
 
+const net = require('net')
+
+var server = net.createServer(function (client) {
+  console.log('Client connected')
+  client.on('data', function (data) {
+    data = data.toString()
+    const command = data.split(' ')[0]
+    if (command === 'init')
+    {
+      const place = data.split(' ')[1]
+      currentClient = client
+      Message.findAll({
+        where: {
+          Place: place
+        }
+      })
+      .then(res => {
+        client.emit('data', Buffer.from(JSON.stringify(res)))
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  })
+})
+
+server.listen(3030)
 
 module.exports = Route

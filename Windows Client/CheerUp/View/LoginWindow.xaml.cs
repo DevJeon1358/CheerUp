@@ -63,7 +63,7 @@ namespace CheerUp
                 rMgr.setUserRegisteryValue("CheerUp", "LALP", id_textbox.Text);
             }
 
-            if (inputId != null && inputPw != null)
+            if (inputId != string.Empty && inputPw != string.Empty)
             {
                 login(inputId, inputPw);
             }
@@ -74,7 +74,7 @@ namespace CheerUp
         }
 
 
-
+        [STAThread]
         private void login(string inputId, string inputPw)
         {
             App.socketManager.OnLogin(inputId, inputPw);
@@ -85,9 +85,11 @@ namespace CheerUp
 
                  if (isRight)
                  {
-                     MainWindow mWindow = new MainWindow();
-                     mWindow.Show();
-                     this.Close();
+                    App.Current.Dispatcher.Invoke(() => { // 크로스 스레드를 해결하기 위한 방법
+                        MainWindow mWindow = new MainWindow();
+                        mWindow.Show();
+                        this.Close();
+                    });
                  }
                  else
                  {
