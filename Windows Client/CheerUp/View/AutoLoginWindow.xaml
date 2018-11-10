@@ -1,0 +1,26 @@
+﻿<Window x:Class="CheerUp.AutoLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheerUp"
+        mc:Ignorable="d"
+        Title="CheerUp" Height="600" Width="350" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Border CornerRadius="5" Background="#673ab7">
+            <Grid Background="Transparent">
+                <Grid HorizontalAlignment="Left" Height="449" Margin="0,136,0,0" VerticalAlignment="Top" Width="350" Background="#212121">
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="60" Margin="145,182,0,0" VerticalAlignment="Top" Width="60" Source="../Image/loading.png"/>
+                </Grid>
+                <Image x:Name="header" HorizontalAlignment="Left" Height="220" VerticalAlignment="Top" Width="350" Margin="0,10,0,0" Source="../Image/Header.png"/>
+                <Image x:Name="menu_btn" HorizontalAlignment="Left" Height="25" Margin="15,15,0,0" VerticalAlignment="Top" Width="25" Source="../Image/menu.png"/>
+                <Label x:Name="header_label" Content="Account" HorizontalAlignment="Left" Margin="50,14,0,0" VerticalAlignment="Top" FontSize="14" Foreground="White" FontFamily="NanumGothic Light"/>
+                <Image x:Name="account_btn" HorizontalAlignment="Left" Height="41" Margin="15,90,0,0" VerticalAlignment="Top" Width="41" Source="/CheerUp;component/Image/account.png"/>
+                <Label x:Name="header_label_Copy" Content="자동 로그인 진행중" HorizontalAlignment="Left" Margin="69,86,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="des_information_label" Content="계정정보를 확인하는 중입니다." HorizontalAlignment="Left" Margin="69,116,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="NanumSquareRound Bold"/>
+                <Label x:Name="main_information_label" Content="잠시만 기다려 주십시오." HorizontalAlignment="Left" Margin="82,393,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="NanumSquareRound Bold"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
