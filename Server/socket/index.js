@@ -22,7 +22,11 @@ const User = sequelize.define('User', {
   Name: { type: Sequelize.STRING(45), allowNull: false },
   IsBan: { type: Sequelize.STRING(5), allowNull: false, defaultValue: 'No' }
 }, {
-    timestamps: false
+    timestamps: false,
+    paranoid: true,
+    underscored: true,
+    freezeTableName: true,
+    tableName: 'User'
   }
 )
 
@@ -31,7 +35,11 @@ const Place = sequelize.define('Place', {
   Name: { type: Sequelize.TEXT, allowNull: false},
   Explaination: { type: Sequelize.TEXT, allowNull: true }
 }, {
-  timestamps: false
+  timestamps: false,
+  paranoid: true,
+  underscored: true,
+  freezeTableName: true,
+  tableName: 'Place'
 })
 
 const Message = sequelize.define('Message', {
@@ -41,7 +49,11 @@ const Message = sequelize.define('Message', {
   Content: { type: Sequelize.TEXT, allowNull: true },
   UpTime: { type: Sequelize.DATE, defaultValue: Sequelize.NOW }
 }, {
-  timestamps: false
+  timestamps: false,
+  paranoid: true,
+  underscored: true,
+  freezeTableName: true,
+  tableName: 'Message'
 })
 /**
  * Socket.io 라우팅
