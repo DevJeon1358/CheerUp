@@ -140,6 +140,7 @@ function Route(client) {
   client.on('getplace', function () {
     Place.findAll()
     .then(res => {
+      console.log('getplace_res', res)
       client.emit('getplace_res', res)
     })
   })
