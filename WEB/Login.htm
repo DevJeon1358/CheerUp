@@ -9,46 +9,90 @@
     </head>
     <body class="uk-background-${0|default,muted,primary,secondary|}" >
         <div id="content-top">
-            
-                <ul class="uk-breadcrumb uk-position-small uk-position-top-center" style="border-top: 150px">
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li class="uk-disabled"><a>Disabled</a></li>
-                        <li><span>Active</span></li>
-                    </ul>
         </div>
-       <div class="uk-position-top-left"><img src="img/logo.png" style="position: fixed; z-index:3;"></div>
-
+       <div class="uk-position-top-left"><img src="img/logo.png" style="position: fixed; z-index:3;">
+           
+        </div>
+       
+        
+       
         <div class="uk-position-center" style="width: 300px;" id="login">
             
-            <div class="uk-legend" style="color: black; font-size: 40px; margin-left:95px; margin-top: 0px; color: whitesmoke;">Log in</div>
+            <div class="uk-legend" style="color: black; font-size: 40px; margin-left:95px; color: whitesmoke;">Log in</div>
             <hr size="5">
             <div style="margin-left: 50px">
             <form method="POST">
                  <div class="uk-margin">
-                     <input class="uk-input uk-form-danger uk-form-width-medium" type="text" placeholder="로그인" name="id">
+                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="text" placeholder="아이디" name="id">
                      
                  </div>
                 <div class="uk-margin">
-                     <input class="uk-input uk-form-success uk-form-width-medium" type="password" placeholder="패스워드" name="password">
+                     <input class="uk-input uk-form-stacked uk-form-width-medium" type="password" placeholder="패스워드" name="password">
                 </div>
              </div>
-            <button type="submit" class="uk-button uk-button-primary uk-button-large uk-position-center" style="margin-top: 135px">Login</button> 
-            <a class="uk-link-text  uk-position-center" style="margin-top: 5000px" href="Register.htm">회원가입</a>
+            <button type="submit" class="uk-button uk-button-primary uk-button-default uk-position-center" style="margin-top: 135px;">Login</button> 
+            <a class="uk-link-text  uk-position-center" style="margin-top: 180px;" href="Register.htm">회원가입</a> 
+            
         </form>
         </div>
 
-        <div class="uk-position-bottom-left" id="intoduce">
-            <article class="uk-article">
+
+        <div class=" uk-child-width-1-3@m" uk-grid uk-scrollspy="cls: uk-animation-fade; target: > div > .uk-card; delay: 100; repeat: false" 
+            style="position: fixed; margin-top: 140px">
+                
+
+
+
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body" onmousedown="hookmaster(1)">
+                        <h3 class="uk-card-title">Login</h3>
+                        
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body" onmousedown="hookmaster(2)">
+                        <h3 class="uk-card-title">Intro</h3>
+                  
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body" onmousedown="hookmaster(3)">
+                        <h3 class="uk-card-title">Join</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        
+            
+            <article class="uk-article" style="position: absolute;top: 1500px" id="intro">
                 <h1 class="uk-article-title" style="color: white">What is <a class="uk-link-reset" href="" style="color: yellow">Cheer up</a>?</h1>
-                <p class="uk-text-lead" style="color: white">아 진짜 이런거 100년에
-                나올까 말까 한건데 지금... 무려 <회원수>명 이나 된다고! <br>응원도하고! 인싸도 되고! 으이!<br>아따 그참 </p>
-                
+                <p class="uk-text-lead" style="color: white">Cheer up이란, 모두에게 힘들 주고자 하는 사람들이 가장 
+                간편하게 <br>많은 분들에게 응원의 메시지를 보낼 수 있는 서비스 입니다.              
+                <br>현재 <회원수>명의 회원분들이 세상에 열정의 열기를 보내고 있습니다. <br>응원도하고! 인싸도 되고! 으이!<br>아따 그참 </p>
             </article>
-        </div>
         
+        <script>
+            
+            var login = document.getElementById('login');
+            var intro = document.getElementById('intro');
+
+            var scrollUpDelay = 1;
+            var scrollUpSpeed = 30;
+
+            function hookmaster(acknum){
+                console.log("함수작동");
+                if(acknum==1){
+                   window.scrollTo(0,0);
+                }
+                else if(acknum==2){
+                    intro.scrollIntoView('intro');
+                }
+                else if(acknum==3){
+                    location.href="Register.htm";
+                }
+            }
         
-                
+        </script>
         <script src="uikit/js/uikit.min.js" ></script>
         <script src="uikit/js/uikit-icons.min.js" ></script>
     </body>
