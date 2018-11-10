@@ -99,7 +99,9 @@ function Route(client) {
       client.emit('join_res', false)
     })
   })
-  
+  client.on('ping', function () {
+    client.emit('pong')
+  })
 }
 
 
