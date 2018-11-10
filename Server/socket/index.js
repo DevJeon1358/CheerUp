@@ -189,10 +189,11 @@ var server = net.createServer(function (client) {
       console.log('tcp init')
       const place = data.split(' ')[1]
       currentClient = client
-      Message.findAll({
+      Message.find({
         where: {
           Place: place
-        }
+        },
+        limit: 10
       })
       .then(res => {
         console.log('tcp', res)
