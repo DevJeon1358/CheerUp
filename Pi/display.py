@@ -27,6 +27,16 @@ def receives_thread():
         thread=threading.Thread(target=receives)
         thread.daemon=True #프로그램 종료시 프로세스도 함께 종료 (백그라운드 재생 X)
         thread.start()
+        
+def read_sensor(temp, humi):
+    while True:
+        upload_Humidity_Data(humi)
+        upload_Temperature_Data(temp)
+
+def temp_hum_thread():
+    thread = threading.Thread(taget = read_sensor, args=(temperature, humidity)
+    thrad.damon = True
+    thread.start()
 
 def upButton_Click():
     global cnt
@@ -66,6 +76,7 @@ if __name__ == "__main__":
     ui.index_up.clicked.connect(upButton_Click)
     ui.index_down.clicked.connect(downButton_Click)
     receives_thread()
+    temp_hum_thread()
     upload_Data(str(cnt+1))
     upload_Sentence(messages[cnt-1]['Content'])
     Dialog.show()
