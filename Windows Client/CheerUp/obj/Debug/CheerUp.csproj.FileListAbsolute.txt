@@ -38,3 +38,13 @@ C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\De
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.g.cs
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.baml
 C:\Users\Square\Desktop\MAP\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\bin\Debug\SQ_CRE.dll
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AccountBanWindow.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoginWindow.g.cs
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AccountBanWindow.baml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\AutoLoginWindow.baml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoadingWindow.baml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\View\LoginWindow.baml
+C:\Users\sunio\OneDrive\문서\GitHub\2018-2ND-DGSW-Hackaton\Windows Client\CheerUp\obj\Debug\CheerUp.csproj.CopyComplete
