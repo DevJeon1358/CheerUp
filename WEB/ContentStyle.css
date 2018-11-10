@@ -1,3 +1,9 @@
+/* #################### 공용으로 사용 */
+
+html{
+    font-family: 'Jua', sans-serif;
+}
+
 #bg{ /* 백그라운드  */
     width: 100%;
     height: 100vh;
@@ -44,7 +50,7 @@
 .title_sub{ /* 소제목 */
     padding-left: 30px;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 23px;
     position: relative;
 }
 
@@ -56,3 +62,28 @@
     width: 80%;
     height: 200px;
 }
+
+/* #################### PostMessage에서 사용됨 */
+
+.main_div_title{
+    color: white;
+    font-size: 20px;
+}
+
+.cheerup_textarea{
+    width: 96%;
+    height: 100px;
+    padding: 2%;
+    font-size: 20px;
+    font-family: 'Jua', sans-serif;
+}
+
+.submit_btn{
+    font-size: 17px;
+    background-color: #5bdaa5;
+}
+
+
+/* #################### ChoiceRoom에서 사용됨 */
+
+
