@@ -145,7 +145,7 @@ function Route(client) {
     })
   })
   client.on('addmessage', function (data) {
-    if (!data.User)
+    if (!data. User)
       if (!client.userId)
         client.emit('addmessage_res', false)
     if (!(data && data.Content && data.Place))
