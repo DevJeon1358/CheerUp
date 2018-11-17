@@ -1,4 +1,4 @@
-# 2018-2ND-DGSW-Hackaton
+# CheerUp
 
 > 고마운 분들에게 따뜻한 고마움을 전달하는 솔루션,
 
